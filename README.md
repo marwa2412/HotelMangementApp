@@ -58,7 +58,7 @@
     After login, you are presented with a dashboard that is primarily divided into three sections. The top section contains the name 
     of the current interface, the date, the time, a button to log out, and another button that opens a window with information about 
     the application.This section is present in all of the subsequent interfaces. The second section on the left is a menu with
-    buttons that allow you to switch to other interfaces. The left section displays graphs and statistics based on the data in 
+    buttons that allow you to switch to other interfaces. The right section displays graphs and statistics based on the data in 
     the application.All interfaces have a button in the top corner that will display the menu to switch between interfaces.
     The other interfaces typically contain the same thing, a data table in the center and buttons for the different operations 
     that can be performed on each element of the application. "Add" buttons that open other completely interfaces or 
