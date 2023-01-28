@@ -6,8 +6,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 
-<AnchorPane prefHeight="340.0" prefWidth="277.0" style="-fx-background-color: #FFFFFf;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneController">
+<AnchorPane prefHeight="340.0" prefWidth="277.0" style="-fx-background-color: #FFFFFf;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneControllerBookingActivities">
    <children>
       <Label layoutX="74.0" layoutY="16.0" prefHeight="30.0" prefWidth="129.0" text="Book Activity" textAlignment="CENTER">
          <font>
@@ -25,15 +27,19 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="41.0" layoutY="300.0" mnemonicParsing="false" onAction="#saveNewBookingActivity" prefHeight="25.0" prefWidth="82.0" text="Save">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
+      <Button defaultButton="true" layoutX="41.0" layoutY="300.0" mnemonicParsing="false"  prefHeight="25.0" prefWidth="82.0" text="Save" onAction="#switchToBookingActivity">
+         <graphic>
+		        <ImageView>
+		            <Image url="C:\Users\hp\Downloads\check.png"/>
+		        </ImageView>
+		  </graphic>
       </Button>
-      <Button layoutX="149.0" layoutY="300.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Cancel">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
+      <Button layoutX="149.0" layoutY="300.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Cancel" onAction="#switchToBookingActivity">
+         <graphic>
+		        <ImageView>
+		            <Image url="C:\Users\hp\Downloads\cancel.png"/>
+		        </ImageView>
+		  </graphic>
       </Button>
       <ComboBox fx:id="activity" layoutX="64.0" layoutY="131.0" prefWidth="150.0" />
       <ComboBox fx:id="client" layoutX="64.0" layoutY="227.0" prefWidth="150.0" />

@@ -16,11 +16,13 @@ public class Main extends Application   {
 	public void start(Stage arg0) throws Exception {
 		try {
 			Parent root;
-			root = FXMLLoader.load(getClass().getResource("login.fxml"));
+			root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
 			 Scene scene = new Scene(root);
 	    	  
 	    	  Stage stage = new Stage();
 	    	  stage.setScene(scene);
+	    	  stage.setResizable(false);
+	    	  stage.setTitle("Luxurious Hotel");
 	    	  stage.show();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

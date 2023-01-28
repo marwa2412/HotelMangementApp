@@ -12,6 +12,14 @@ public class bookingActivities {
 	
 	public bookingActivities(String activity, String client, String now) {
 		super();
+		this.ID.set(0);
+		this.activity.set(activity);
+		this.client.set(client);
+		this.now.set(now);
+	}
+	public bookingActivities(int ID,String activity, String client, String now) {
+		super();
+		this.ID.set(ID);
 		this.activity.set(activity);
 		this.client.set(client);
 		this.now.set(now);
@@ -47,11 +55,11 @@ public class bookingActivities {
 	 public static void saveNewBookingActivityM(bookingActivities  bookingActivities) {		 
 		 try {	 
 				System.out.println("Logged succ to try");
-			    String query1 = "INSERT INTO bookingactivities(clientId,Activity,dateBookingActivity) " + " VALUES (?,?,?)";
+			    String query1 = "INSERT INTO bookingactivities(Activity,clientId,dateBookingActivity) " + " VALUES (?,?,?)";
 			    PreparedStatement preparedStmt = hotelModel.connectionToDB().prepareStatement(query1);
 		
-			    preparedStmt.setString (1, bookingActivities.getClient());
-			    preparedStmt.setString (2, bookingActivities.getActivity());
+			    preparedStmt.setString (1, bookingActivities.getActivity());
+			    preparedStmt.setString (2, bookingActivities.getClient());
 			    preparedStmt.setString (3, bookingActivities.getNow());
 
 			    preparedStmt.executeUpdate();

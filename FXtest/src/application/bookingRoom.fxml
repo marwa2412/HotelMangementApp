@@ -11,37 +11,38 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="771.0" style="-fx-background-color: #C8B49C" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneControllerBookingRooms">
+<AnchorPane maxHeight="470.0" maxWidth="800.0" minHeight="470.0" minWidth="800.0" prefHeight="470.0" prefWidth="800.0" style="-fx-background-color: #C8B49C" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneControllerBookingRooms">
    <children>
-      <Circle fill="#b9a08a" layoutX="678.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
-      <Circle fill="#b9a08a" layoutX="749.0" layoutY="18.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
-      <Circle fill="#b9a08a" layoutX="713.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9a08a" height="30.0" layoutX="517.0" layoutY="3.0" stroke="#B9A08A" strokeType="INSIDE" width="137.0" />
+      <Circle fill="#b9a08a" layoutX="699.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
+      <Circle fill="#b9a08a" layoutX="779.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
+      <Circle fill="#b9a08a" layoutX="739.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9a08a" height="30.0" layoutX="537.0" layoutY="3.0" stroke="#B9A08A" strokeType="INSIDE" width="137.0" />
       <Label layoutX="46.0" layoutY="3.0" prefHeight="30.0" prefWidth="247.0" text="Luxurious Hotel - Booking">
          <font>
             <Font name="Berlin Sans FB" size="22.0" />
          </font>
       </Label>
-      <ScrollPane layoutX="18.0" layoutY="87.0" prefHeight="307.0" prefWidth="696.0">
+      <ScrollPane layoutX="18.0" layoutY="83.0" maxHeight="347.0" maxWidth="712.0" minHeight="347.0" minWidth="712.0" prefHeight="347.0" prefWidth="712.0">
          <content>
-            <TableView fx:id="bookingTable" prefHeight="304.0" prefWidth="679.0">
+            <TableView fx:id="bookingTable" maxHeight="347.0" maxWidth="712.0" minHeight="347.0" minWidth="712.0" prefHeight="347.0" prefWidth="712.0">
               <columns>
-                <TableColumn fx:id="bookNum" prefWidth="75.0" text="Book_Num" />
-                <TableColumn fx:id="clientM" prefWidth="49.333335876464844" text="Client" />
-                  <TableColumn fx:id="roomM" prefWidth="55.33332061767578" text="Room" />
-                  <TableColumn fx:id="checkInM" prefWidth="62.66673278808594" text="Check_In" />
-                  <TableColumn fx:id="checkOutM" prefWidth="80.66667175292969" text="Check_Out" />
-                  <TableColumn fx:id="extraAdultM" prefWidth="82.0" text="Extra_Adult" />
-                  <TableColumn fx:id="extraChildM" prefWidth="49.99993896484375" text="Extra_Child" />
-                  <TableColumn fx:id="priceM" prefWidth="49.333404541015625" text="Price" />
-                  <TableColumn fx:id="statusM" prefWidth="59.333404541015625" text="Status" />
-                  <TableColumn fx:id="dateM" prefWidth="110.66664632161462" text="Date" />
-                  <TableColumn prefWidth="75.0" text="Check_Time" />
-                  <TableColumn prefWidth="75.0" text="Clients_needs" />
+                <TableColumn fx:id="numB" maxWidth="500.0" prefWidth="48.66665971279144" text="N°Book" />
+                <TableColumn fx:id="clientM" maxWidth="500.0" prefWidth="56.66665267944336" text="N°Client" />
+                  <TableColumn fx:id="roomM" maxWidth="200.0" prefWidth="54.0" text="N°Room" />
+                  <TableColumn fx:id="checkInM" maxWidth="200.0" minWidth="50.0" prefWidth="70.0" text="Check_In" />
+                  <TableColumn fx:id="checkOutM" maxWidth="200.0" minWidth="50.0" prefWidth="70.0" text="Check_Out" />
+                  <TableColumn fx:id="timeM" maxWidth="90.0" prefWidth="45.3333740234375" text="Time" />
+                  <TableColumn fx:id="extraAdultM" maxWidth="100.0" prefWidth="45.3333740234375" text="Adult" />
+                  <TableColumn fx:id="extraChildM" maxWidth="100.0" prefWidth="43.33331298828125" text="Child" />
+                  <TableColumn fx:id="priceM" maxWidth="120.0" prefWidth="63.3333740234375" text="Price" />
+                  <TableColumn fx:id="statusM" prefWidth="49.33343505859375" text="Status" />
+                  <TableColumn fx:id="dateM" maxWidth="100.0" minWidth="50.0" prefWidth="70.0" text="Date" />
+                  <TableColumn fx:id="observation" prefWidth="74.0" text="Observation" />
               </columns>
             </TableView>
          </content>
@@ -87,32 +88,59 @@
             <Separator layoutX="1.0" layoutY="4.0" minWidth="5.0" orientation="VERTICAL" prefHeight="371.0" prefWidth="1.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
          </children>
       </AnchorPane>
-      <Separator layoutY="35.0" prefHeight="4.0" prefWidth="771.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+      <Separator layoutY="35.0" prefHeight="4.0" prefWidth="800.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
       <Button layoutX="1.0" layoutY="42.0" mnemonicParsing="false" text="=">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="719.0" layoutY="145.0" mnemonicParsing="false"   prefHeight="45.0" prefWidth="45.0" text="ADD"  />
-      <Button layoutX="719.0" layoutY="202.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" text="MODIFY" />
-      <Button layoutX="719.0" layoutY="260.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" text="STATUT" />
-      <AnchorPane layoutX="195.0" layoutY="48.0" prefHeight="30.0" prefWidth="377.0" style="-fx-background-color: b9a08a;" />
-      <AnchorPane layoutX="337.0" layoutY="399.0" prefHeight="32.0" prefWidth="150.0" style="-fx-background-color: #C8B49C;">
-         <children>
-            <TextField layoutX="178.0" prefHeight="30.0" prefWidth="170.0" promptText="Search by client's name" />
-            <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="352.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Downloads/zoom.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <Button layoutX="3.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToDashboard" style="-fx-background-color: b9a08a;" text="&lt;&lt;">
+      <AnchorPane layoutX="195.0" layoutY="45.0" prefHeight="30.0" prefWidth="377.0" style="-fx-background-color: b9a08a;" />
+      <Button layoutX="3.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToDashboard" style="-fx-background-color: b9a08a;">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
+         <graphic>
+			        <ImageView>
+			            <Image url="C:\Users\hp\Downloads\rewind-button.png" />
+			        </ImageView>
+		    	</graphic>
       </Button>
-      
+      <VBox layoutX="737.0" layoutY="160.0" prefHeight="188.0" prefWidth="53.0" spacing="20.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#switchToAddNewBooking" prefHeight="45.0" prefWidth="45.0">
+             <graphic>
+			        <ImageView>
+			            <Image url="C:\Users\hp\Downloads\bouton-ajouter (1).png" />
+			        </ImageView>
+		    	</graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#switchToModifyBookingRoom" prefHeight="45.0" prefWidth="45.0">
+             <graphic>
+			        <ImageView>
+			            <Image url="C:\Users\hp\Downloads\edit-button.png" />
+			        </ImageView>
+		    	</graphic>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
+             <graphic>
+			        <ImageView>
+			            <Image url="C:\Users\hp\Downloads\clipboard.png" />
+			        </ImageView>
+		    	</graphic>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+      <TextField layoutX="531.0" layoutY="435.0" prefHeight="30.0" prefWidth="170.0" promptText="Search by client's name" />
+      <Button layoutX="699.0" layoutY="436.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="31.0">
+         <graphic>
+	        	<ImageView>
+		            <Image url="C:\Users\hp\Downloads\search.png" />
+		        </ImageView>
+		 </graphic>
+      </Button>  
          
    </children>
 </AnchorPane>

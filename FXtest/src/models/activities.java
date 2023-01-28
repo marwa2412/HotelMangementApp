@@ -15,10 +15,21 @@ public class activities {
 	private SimpleStringProperty spot = new SimpleStringProperty();
 	public activities(String type, String date, int time, int persons, String spot,int price) {
 		super();
-		this.type.set(spot);
-		this.date.set(spot);
+		this.ID.set(0);
+		this.type.set(type);
+		this.date.set(date);
 		this.time.set(time);
-		this.persons.set(price);
+		this.persons.set(persons);
+		this.spot.set(spot);
+		this.price.set(price);
+	}
+	public activities(int id,String type, String date, int time, int persons, String spot,int price) {
+		super();
+		this.ID.set(id);
+		this.type.set(type);
+		this.date.set(date);
+		this.time.set(time);
+		this.persons.set(persons);
 		this.spot.set(spot);
 		this.price.set(price);
 	}

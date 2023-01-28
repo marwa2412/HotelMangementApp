@@ -17,6 +17,19 @@ public class rooms {
 	
 	public rooms(int numRoom, int numFloor, String typeRoom, String viewRoom, String statueRoom, boolean cleaningRoom, String techProbs, int priceRoom) {
         super();
+        this.idRoom.set(0);
+        this.numRoom.set(numRoom);
+        this.numFloor.set(numFloor);
+        this.typeRoom.set(typeRoom);
+        this.viewRoom.set(viewRoom);
+        this.statueRoom.set(statueRoom);
+        this.cleaningRoom.set(cleaningRoom);
+        this.techProbs.set(techProbs);
+        this.priceRoom.set(priceRoom);
+    }
+	public rooms(int ID,int numRoom, int numFloor, String typeRoom, String viewRoom, String statueRoom, boolean cleaningRoom, String techProbs, int priceRoom) {
+        super();
+    	this.idRoom.set(ID);
         this.numRoom.set(numRoom);
         this.numFloor.set(numFloor);
         this.typeRoom.set(typeRoom);

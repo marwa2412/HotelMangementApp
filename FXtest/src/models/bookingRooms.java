@@ -6,9 +6,10 @@ import java.time.LocalDateTime;
 import javafx.beans.property.*;
 
 public class bookingRooms {
-	private SimpleIntegerProperty numBook = new SimpleIntegerProperty();
 	private SimpleStringProperty client = new SimpleStringProperty();
 	private SimpleStringProperty room = new SimpleStringProperty();
+	private SimpleIntegerProperty numBook = new SimpleIntegerProperty();
+
 	private SimpleStringProperty checkInDate = new SimpleStringProperty();
 	private SimpleStringProperty checkOutDate = new SimpleStringProperty();
 	private SimpleStringProperty checkTime = new SimpleStringProperty();
@@ -18,9 +19,12 @@ public class bookingRooms {
 	private SimpleStringProperty status = new SimpleStringProperty();
 	private SimpleStringProperty needs = new SimpleStringProperty();
 	private SimpleStringProperty dateBooking = new SimpleStringProperty();
+
+	
 	public bookingRooms(String client, String room, String checkInDate, String checkOutDate,
 			String checkTime, String extraAdult, String extraChild, String price, String status, String now, String needs) {
 		super();
+		this.numBook.set(0);
 		this.room.set(room);
 		this.checkInDate.set(checkInDate);
 		this.checkOutDate.set(checkOutDate);
@@ -34,10 +38,27 @@ public class bookingRooms {
 		this.client.set(client);
 	}
 	
-	public int getnumBook() {
+	public bookingRooms(int id,String client, String room, String checkInDate, String checkOutDate,
+			String checkTime, String extraAdult, String extraChild, String price, String status, String now, String needs) {
+		super();
+		this.numBook.set(id);
+		this.room.set(room);
+		this.checkInDate.set(checkInDate);
+		this.checkOutDate.set(checkOutDate);
+		this.checkTime.set(checkTime);
+		this.extraAdult.set(extraAdult);
+		this.extraChild.set(extraChild);
+		this.price.set(price);
+		this.status.set(status);
+		this.dateBooking.set(now);
+		this.needs.set(needs);
+		this.client.set(client);
+	}
+	
+	public int getNumBook() {
 		return numBook.get();
 	}
-	public void setnumBook(int numBook) {
+	public void setNumBook(int numBook) {
 		this.numBook.set(numBook);
 	}
 	public String getClient() {
@@ -159,7 +180,7 @@ public class bookingRooms {
 			    preparedStmt.setString (10, bookingRoomObj.getNeeds());
 			    preparedStmt.setString (11,bookingRoomObj.getCheckInDate());
 			    preparedStmt.setString (12, bookingRoomObj.getCheckOutDate());	
-			    preparedStmt.setInt (13, bookingRoomObj.getnumBook());
+			    preparedStmt.setInt (13, bookingRoomObj.getNumBook());
 
 			    preparedStmt.executeUpdate();
 			    hotelModel.connectionToDB().close();

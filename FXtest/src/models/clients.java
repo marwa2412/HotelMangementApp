@@ -13,6 +13,17 @@ public class clients {
 	private SimpleStringProperty email = new SimpleStringProperty();
 	public clients(String fullName, String cin, String sexe, String nationality, String phone,String email) {
 		super();
+		this.ID.set(0);
+		this.fullName.set(fullName);
+		this.cin.set(cin);
+		this.sexe.set(sexe);
+		this.nationality.set(nationality);
+		this.phone.set(phone);
+		this.email.set(email);
+	}
+	public clients(int id,String fullName, String cin, String sexe, String nationality, String phone,String email) {
+		super();
+		this.ID.set(id);
 		this.fullName.set(fullName);
 		this.cin.set(cin);
 		this.sexe.set(sexe);
