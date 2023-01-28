@@ -3,11 +3,13 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -17,23 +19,13 @@
 
 <AnchorPane maxHeight="470.0" maxWidth="800.0" minHeight="470.0" minWidth="800.0" prefHeight="470.0" prefWidth="800.0" style="-fx-background-color: #C8B49C" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneControllerClients">
    <children>
-      <Circle fill="#b9a08a" layoutX="711.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
       <Circle fill="#b9a08a" layoutX="780.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="766.0" layoutY="3.0" onMouseClicked="#switchToLogin" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Downloads/utilisateur.png" />
+            <Image url="@../images/utilisateur.png" />
          </image>
       </ImageView>
-      <Circle fill="#b9a08a" layoutX="746.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
-      <TextField fx:id="currentDate" alignment="CENTER" editable="false" layoutX="457.0" layoutY="4.0" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #b9a08a;">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></TextField>
-      <TextField fx:id="currentTime" alignment="CENTER" editable="false" layoutX="570.0" layoutY="4.0" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #b9a08a;">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </TextField>
+    
       <Label layoutX="45.0" layoutY="3.0" prefHeight="30.0" prefWidth="247.0" text="Luxurious Hotel - Clients">
          <font>
             <Font name="Berlin Sans FB" size="22.0" />
@@ -55,27 +47,27 @@
          </content>
       </ScrollPane>
       <Separator layoutY="35.0" maxHeight="4.0" maxWidth="800.0" minHeight="4.0" minWidth="800.0" prefHeight="4.0" prefWidth="800.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-      <Button layoutX="1.0" layoutY="42.0" mnemonicParsing="false" onAction="#translateDashboard" text="=">
+      <Button layoutX="1.0" layoutY="42.0" mnemonicParsing="false" onAction="#translateDashboard" style="-fx-background-color: #C4DDFF;" text="=">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
       <VBox layoutX="747.0" layoutY="169.0" prefHeight="131.0" prefWidth="53.0" spacing="20.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#switchToAddNewClient" prefHeight="45.0" prefWidth="45.0">
+            <Button mnemonicParsing="false" onAction="#switchToAddNewClient" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #C4DDFF;">
                <graphic>
                   <ImageView>
                      <image>
-                        <Image url="C:\Users\hp\Downloads\bouton-ajouter (1).png" />
+                        <Image url="@../images/bouton-ajouter (1).png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" onAction="#switchToModifyClient" prefHeight="45.0" prefWidth="45.0">
+            <Button mnemonicParsing="false" onAction="#switchToModifyClient" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #C4DDFF;">
                <graphic>
                   <ImageView>
                      <image>
-                        <Image url="C:\Users\hp\Downloads\edit-button.png" />
+                        <Image url="@../images/edit-button.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -86,11 +78,11 @@
          </padding>
       </VBox>
       <TextField fx:id="searchbycin" layoutX="535.0" layoutY="433.0" prefHeight="30.0" prefWidth="170.0" promptText="Client's CIN" />
-      <Button layoutX="703.0" layoutY="434.0" mnemonicParsing="false" onAction="#searchClient" prefHeight="27.0" prefWidth="31.0">
+      <Button layoutX="703.0" layoutY="434.0" mnemonicParsing="false" onAction="#searchClient" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: #C4DDFF;">
          <graphic>
             <ImageView>
                <image>
-                  <Image url="C:\Users\hp\Downloads\search.png" />
+                  <Image url="@../images/search.png" />
                </image>
             </ImageView>
          </graphic>
@@ -102,18 +94,25 @@
          <graphic>
             <ImageView>
                <image>
-                  <Image url="C:\Users\hp\Downloads\rewind-button.png" />
+                  <Image url="@../images/rewind-button.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
       
-   
+     <TextField fx:id="currentDate" alignment="CENTER" editable="false" layoutX="556.0" layoutY="4.0" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #b9a08a; -fx-text-fill: #C4DDFF;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="currentTime" alignment="CENTER" editable="false" layoutX="670.0" layoutY="4.0" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #b9a08a; -fx-text-fill: #C4DDFF;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
       <AnchorPane fx:id="sliderModify" layoutX="801.0" layoutY="62.0" prefHeight="353.0" prefWidth="277.0" style="-fx-background-color: #FFFFFf;">
          <children>
             <TextField fx:id="NationalityM" editable="true" layoutX="119.0" layoutY="193.0" />
             <TextField fx:id="PhoneM" editable="true" layoutX="119.0" layoutY="233.0" />
-            <TextField fx:id="SexeM" editable="true" layoutX="119.0" layoutY="151.0" prefHeight="25.0" prefWidth="149.0" />
             <TextField fx:id="CINM" editable="true" layoutX="117.0" layoutY="110.0" prefHeight="25.0" prefWidth="149.0" />
             <TextField fx:id="FullNameM" editable="true" layoutX="115.0" layoutY="68.0" />
             <Label layoutX="89.0" layoutY="16.0" prefHeight="30.0" prefWidth="99.0" text="Client - N°" textAlignment="CENTER">
@@ -147,17 +146,17 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button layoutX="41.0" layoutY="309.0" mnemonicParsing="false" onAction="#ModifyClient" prefHeight="25.0" prefWidth="82.0" text="Save">
+            <Button layoutX="41.0" layoutY="309.0" mnemonicParsing="false" onAction="#ModifyClient" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #4E6C50;" text="Save">
                <graphic>
 		        <ImageView>
-		            <Image url="C:\Users\hp\Downloads\check.png" />
+		            <Image url="@../images/check.png" />
 		        </ImageView>
 		        </graphic>
             </Button>
-            <Button layoutX="147.0" layoutY="309.0" mnemonicParsing="false" onAction="#translateModify" prefHeight="25.0" prefWidth="82.0" text="Cancel">
+            <Button layoutX="147.0" layoutY="309.0" mnemonicParsing="false" onAction="#translateModify" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #B33030;" text="Cancel">
                <graphic>
       		        <ImageView>
-      		            <Image url="C:\Users\hp\Downloads\cancel.png" />
+      		            <Image url="@../images/cancel.png" />
       		        </ImageView>
       		  </graphic>
             </Button>
@@ -167,6 +166,19 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
+            <RadioButton fx:id="sexeMaleM" layoutX="121.0" layoutY="155.0" mnemonicParsing="false" text="Male">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="genderM" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="sexeFemaleM" layoutX="196.0" layoutY="155.0" mnemonicParsing="false" text="Female" toggleGroup="$genderM">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
          </children>
       </AnchorPane>
       
@@ -174,7 +186,6 @@
          <children>
             <TextField fx:id="Nationality" layoutX="117.0" layoutY="192.0" />
             <TextField fx:id="Phone" layoutX="119.0" layoutY="231.0" />
-            <TextField fx:id="Sexe" layoutX="116.0" layoutY="152.0" prefHeight="25.0" prefWidth="149.0" />
             <TextField fx:id="CIN" layoutX="116.0" layoutY="110.0" prefHeight="25.0" prefWidth="149.0" />
             <TextField fx:id="FullName" layoutX="116.0" layoutY="68.0" />
             <Label layoutX="64.0" layoutY="16.0" prefHeight="30.0" prefWidth="149.0" text="New Client - N°" textAlignment="CENTER">
@@ -208,10 +219,10 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button layoutX="41.0" layoutY="314.0" mnemonicParsing="false" onAction="#saveNewClient" prefHeight="25.0" prefWidth="82.0" text="Save">
+            <Button layoutX="41.0" layoutY="314.0" mnemonicParsing="false" onAction="#saveNewClient" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #4E6C50;" text="Save">
                <graphic>
 		        <ImageView>
-		            <Image url="C:\Users\hp\Downloads\check.png" />
+		            <Image url="@../images/check.png" />
 		        </ImageView>
 		        </graphic>
             </Button>
@@ -220,14 +231,27 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button layoutX="150.0" layoutY="314.0" mnemonicParsing="false" onAction="#translateAdd" prefHeight="25.0" prefWidth="82.0" text="Cancel">
+            <Button layoutX="150.0" layoutY="314.0" mnemonicParsing="false" onAction="#translateAdd" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #B33030;" text="Cancel">
                <graphic>
       		        <ImageView>
-      		            <Image url="C:\Users\hp\Downloads\cancel.png" />
+      		            <Image url="@../images/cancel.png" />
       		        </ImageView>
       		  </graphic>
             </Button>
             <TextField fx:id="Email" layoutX="119.0" layoutY="274.0" />
+            <RadioButton fx:id="sexeMale" layoutX="122.0" layoutY="157.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="69.0" selected="true" text="Male">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="gender" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="sexeFemale" layoutX="196.0" layoutY="157.0" mnemonicParsing="false" text="Female" toggleGroup="$gender">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="sliderDashboard" layoutX="-161.0" layoutY="63.0" prefHeight="378.0" prefWidth="150.0" style="-fx-background-color: #b9a08a;">
@@ -276,11 +300,11 @@
             <Separator layoutX="1.0" layoutY="372.0" prefWidth="150.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
          </children>
       </AnchorPane>
-      <Button layoutX="758.0" layoutY="434.0" mnemonicParsing="false" onAction="#switchToClient" prefHeight="27.0" prefWidth="31.0">
+      <Button layoutX="758.0" layoutY="434.0" mnemonicParsing="false" onAction="#switchToClient" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: #C4DDFF;">
          <graphic>
             <ImageView>
                <image>
-                  <Image url="C:\Users\hp\Downloads\bouton-actualiser.png" />
+                  <Image url="@../images/bouton-actualiser.png" />
                </image>
             </ImageView>
          </graphic>

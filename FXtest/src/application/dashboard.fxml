@@ -16,13 +16,12 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="771.0" style="-fx-background-color: #C8B49C" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneControllerDashboard">
+<AnchorPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="771.0" style="-fx-background-color: #C8B49C;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneControllerDashboard">
    <children>
-      <Circle fill="#b9a08a" layoutX="681.0" layoutY="18.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
       <Circle fill="#b9a08a" layoutX="749.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
       <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="734.0" layoutY="3.0" onMouseClicked="#switchToLogin" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Downloads/utilisateur.png" />
+            <Image url="@../images/utilisateur (1).png" />
          </image>
       </ImageView>
       
@@ -79,30 +78,26 @@
             <Separator layoutX="1.0" layoutY="372.0" prefWidth="150.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="166.0" layoutY="48.0" prefHeight="205.0" prefWidth="221.0" style="-fx-background-color: #b9a08a #b9a08a;">
+      <AnchorPane fx:id="today2" layoutX="549.0" layoutY="46.0" prefHeight="143.0" prefWidth="105.0" style="-fx-background-color: #e16233;">
          <children>
-            <PieChart fx:id="pieChart" prefHeight="211.0" prefWidth="221.0" style="-fx-background-color: ffffff;" />
-         </children></AnchorPane>
-      <AnchorPane layoutX="401.0" layoutY="48.0" prefHeight="147.0" prefWidth="113.0" style="-fx-background-color: #e79c23;">
-         <children>
-            <Label layoutX="17.0" layoutY="14.0" prefHeight="51.0" prefWidth="79.0" text="Today's&#10;Check In" textAlignment="CENTER">
+            <Label layoutX="13.0" layoutY="7.0" prefHeight="51.0" prefWidth="79.0" text="Today's&#10;Check In" textAlignment="CENTER">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="checkInID" alignment="CENTER" editable="false" layoutX="17.0" layoutY="75.0" prefHeight="65.0" prefWidth="79.0" style="-fx-background-color: ffffff;">
+            <TextField fx:id="checkInID" alignment="CENTER" editable="false" layoutX="12.0" layoutY="77.0" prefHeight="51.0" prefWidth="79.0" style="-fx-background-color: ffffff;">
                <font>
                   <Font size="24.0" />
                </font>
             </TextField>
-            <Separator layoutX="17.0" layoutY="74.0" prefHeight="4.0" prefWidth="79.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-            <Separator layoutX="17.0" layoutY="135.0" prefHeight="4.0" prefWidth="79.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-            <Separator layoutX="15.0" layoutY="77.0" minWidth="4.0" orientation="VERTICAL" prefHeight="60.0" prefWidth="4.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-            <Separator layoutX="97.0" layoutY="78.0" minWidth="4.0" orientation="VERTICAL" prefHeight="60.0" prefWidth="4.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="14.0" layoutY="77.0" prefHeight="4.0" prefWidth="79.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="14.0" layoutY="123.0" prefHeight="4.0" prefWidth="79.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="11.0" layoutY="77.0" minWidth="4.0" orientation="VERTICAL" prefHeight="51.0" prefWidth="4.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="92.0" layoutY="77.0" minWidth="4.0" orientation="VERTICAL" prefHeight="51.0" prefWidth="4.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
          </children></AnchorPane>
-      <AnchorPane layoutX="401.0" layoutY="200.0" prefHeight="228.0" prefWidth="363.0" style="-fx-background-color: #b9a08a #b9a08a;">
+      <AnchorPane layoutX="405.0" layoutY="195.0" prefHeight="241.0" prefWidth="367.0" style="-fx-background-color: #b9a08a #b9a08a;">
          <children>
-            <BarChart fx:id="barChart" layoutX="-7.0" prefHeight="236.0" prefWidth="363.0">
+            <BarChart fx:id="barChart" layoutX="3.0" layoutY="13.0" prefHeight="227.0" prefWidth="363.0">
               <xAxis>
                 <CategoryAxis prefHeight="23.0" prefWidth="306.0" side="BOTTOM" fx:id="xAxis" />
               </xAxis>
@@ -111,62 +106,108 @@
               </yAxis>
             </BarChart>
          </children></AnchorPane>
-      <AnchorPane layoutX="525.0" layoutY="48.0" prefHeight="147.0" prefWidth="113.0" style="-fx-background-color: #e16233;">
+      <AnchorPane fx:id="today1" layoutX="437.0" layoutY="46.0" prefHeight="143.0" prefWidth="105.0" style="-fx-background-color: #e79c23;">
          <children>
-            <Label layoutX="14.0" layoutY="14.0" prefHeight="51.0" prefWidth="89.0" text="Today's&#10;Check Out" textAlignment="CENTER">
+            <Label layoutX="8.0" layoutY="8.0" prefHeight="51.0" prefWidth="89.0" text="Today's&#10;Check Out" textAlignment="CENTER">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="checkOutID" alignment="CENTER" editable="false" layoutX="17.0" layoutY="75.0" prefHeight="65.0" prefWidth="79.0" style="-fx-background-color: ffffff;">
+            <TextField fx:id="checkOutID" alignment="CENTER" editable="false" layoutX="12.0" layoutY="78.0" prefHeight="30.0" prefWidth="79.0" style="-fx-background-color: ffffff;">
                <font>
                   <Font size="24.0" />
                </font>
             </TextField>
-            <Separator layoutX="17.0" layoutY="74.0" prefHeight="4.0" prefWidth="79.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-            <Separator layoutX="17.0" layoutY="135.0" prefHeight="4.0" prefWidth="79.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-            <Separator layoutX="15.0" layoutY="77.0" minWidth="4.0" orientation="VERTICAL" prefHeight="60.0" prefWidth="4.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-            <Separator layoutX="97.0" layoutY="78.0" minWidth="4.0" orientation="VERTICAL" prefHeight="60.0" prefWidth="4.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="11.0" layoutY="77.0" prefHeight="4.0" prefWidth="79.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="13.0" layoutY="124.0" prefHeight="4.0" prefWidth="79.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="10.0" layoutY="78.0" minWidth="4.0" orientation="VERTICAL" prefHeight="51.0" prefWidth="4.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="90.0" layoutY="78.0" minWidth="4.0" orientation="VERTICAL" prefHeight="51.0" prefWidth="4.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="649.0" layoutY="48.0" prefHeight="147.0" prefWidth="113.0" style="-fx-background-color: #e79c23;">
+      <AnchorPane fx:id="today3" layoutX="660.0" layoutY="46.0" prefHeight="143.0" prefWidth="105.0" style="-fx-background-color: #e79c23;">
          <children>
-            <Label layoutX="17.0" layoutY="14.0" prefHeight="51.0" prefWidth="79.0" text="Today's&#10;Activities" textAlignment="CENTER">
+            <Label layoutX="12.0" layoutY="5.0" prefHeight="51.0" prefWidth="79.0" text="Today's&#10;Activities" textAlignment="CENTER">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="activitiesID" alignment="CENTER" editable="false" layoutX="17.0" layoutY="75.0" prefHeight="65.0" prefWidth="79.0" style="-fx-background-color: ffffff;">
+            <TextField fx:id="activitiesID" alignment="CENTER" editable="false" layoutX="14.0" layoutY="79.0" prefHeight="51.0" prefWidth="79.0" style="-fx-background-color: ffffff;">
                <font>
                   <Font size="24.0" />
                </font>
             </TextField>
-            <Separator layoutX="17.0" layoutY="74.0" prefHeight="4.0" prefWidth="79.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-            <Separator layoutX="17.0" layoutY="135.0" prefHeight="4.0" prefWidth="79.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-            <Separator layoutX="15.0" layoutY="77.0" minWidth="4.0" orientation="VERTICAL" prefHeight="60.0" prefWidth="4.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-            <Separator layoutX="97.0" layoutY="78.0" minWidth="4.0" orientation="VERTICAL" prefHeight="60.0" prefWidth="4.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="15.0" layoutY="76.0" prefHeight="4.0" prefWidth="79.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="15.0" layoutY="125.0" prefHeight="4.0" prefWidth="79.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="13.0" layoutY="77.0" minWidth="4.0" orientation="VERTICAL" prefHeight="51.0" prefWidth="4.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="92.0" layoutY="77.0" minWidth="4.0" orientation="VERTICAL" prefHeight="51.0" prefWidth="4.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="165.0" layoutY="264.0" prefHeight="163.0" prefWidth="221.0" style="-fx-background-color: ffffff;">
-         <children>
-            <LineChart fx:id="lineChart" layoutY="-1.0" prefHeight="179.0" prefWidth="221.0">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" fx:id="xAxisP" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis fx:id="yAxisP" prefHeight="138.0" prefWidth="18.0" side="LEFT" />
-              </yAxis>
-            </LineChart>
-         </children>
-      </AnchorPane>
-      <TextField fx:id="currentDate" alignment="CENTER" editable="false" layoutX="457.0" layoutY="4.0" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #b9a08a;">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></TextField>
-      <TextField fx:id="currentTime" alignment="CENTER" editable="false" layoutX="570.0" layoutY="4.0" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #b9a08a;">
+      <TextField fx:id="currentDate" alignment="CENTER" editable="false" layoutX="490.0" layoutY="4.0" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #b9a08a; -fx-text-fill: #C4DDFF;">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </TextField>
+      <TextField fx:id="currentTime" alignment="CENTER" editable="false" layoutX="603.0" layoutY="4.0" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #b9a08a; -fx-text-fill: #C4DDFF;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="702.0" layoutY="6.0" onMouseClicked="#translateAbout" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/information .png" />
+         </image>
+      </ImageView>
+      <PieChart fx:id="pieChart" layoutX="162.0" layoutY="201.0" prefHeight="227.0" prefWidth="238.0" style="-fx-background-color: ffffff;" />
+      <AnchorPane layoutX="162.0" layoutY="51.0" prefHeight="120.0" prefWidth="269.0" style="-fx-background-color: ffffff;">
+         <children>
+            <LineChart fx:id="lineChart" layoutX="-1.0" layoutY="-7.0" prefHeight="150.0" prefWidth="269.0">
+               <xAxis>
+                  <CategoryAxis prefHeight="10.0" prefWidth="168.0" side="BOTTOM" fx:id="xAxisP" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis fx:id="yAxisP" prefHeight="138.0" prefWidth="18.0" side="LEFT" />
+               </yAxis>
+            </LineChart>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="sliderAbout" layoutX="289.0" layoutY="-346.0" prefHeight="340.0" prefWidth="277.0" style="-fx-background-color: #FFFFFf;">
+         <children>
+            <Label alignment="CENTER" layoutX="-1.0" layoutY="44.0" prefHeight="57.0" prefWidth="277.0" style="-fx-background-color: #d4d4d4;" text="&quot;Your hotel management &#10;in some clicks&quot;" textAlignment="CENTER">
+               <font>
+                  <Font name="Bodoni MT Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="86.0" layoutY="136.0" prefHeight="57.0" prefWidth="171.0" style="-fx-background-color: #d4d4d4;" text="&#9;Marwa ELARFAOUI&#10;&#9;Oussama BENDADA&#10;&#9;January 2023 " textAlignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="111.0" prefHeight="32.0" prefWidth="71.0" text="Realised :">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="195.0" prefHeight="25.0" prefWidth="64.0" text="Supervisor:">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="87.0" layoutY="214.0" prefHeight="45.0" prefWidth="171.0" style="-fx-background-color: #d4d4d4;" text="&#9;Pr.Khaoula Chraibi&#10;&#9;2022/2023" textAlignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="57.0" fitWidth="89.0" layoutX="31.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/UEMF.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="89.0" layoutX="158.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/EIDIA.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

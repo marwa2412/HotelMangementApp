@@ -18,23 +18,13 @@
 
 <AnchorPane maxHeight="470.0" maxWidth="800.0" minHeight="470.0" minWidth="800.0" prefHeight="470.0" prefWidth="800.0" style="-fx-background-color: #C8B49C" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneControllerBookingRooms">
    <children>
-      <Circle fill="#b9a08a" layoutX="699.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
       <Circle fill="#b9a08a" layoutX="779.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="765.0" layoutY="3.0" onMouseClicked="#switchToLogin" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Downloads/utilisateur.png" />
+            <Image url="@../images/utilisateur.png" />
          </image>
       </ImageView>
-      <Circle fill="#b9a08a" layoutX="739.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
-      <TextField fx:id="currentDate" alignment="CENTER" editable="false" layoutX="457.0" layoutY="4.0" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #b9a08a;">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></TextField>
-      <TextField fx:id="currentTime" alignment="CENTER" editable="false" layoutX="570.0" layoutY="4.0" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #b9a08a;">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </TextField>
+     
       <Label layoutX="46.0" layoutY="3.0" prefHeight="30.0" prefWidth="247.0" text="Luxurious Hotel - Booking">
          <font>
             <Font name="Berlin Sans FB" size="22.0" />
@@ -52,51 +42,50 @@
                   <TableColumn fx:id="timeM" maxWidth="90.0" prefWidth="45.3333740234375" text="Time" />
                   <TableColumn fx:id="extraAdultM" maxWidth="100.0" prefWidth="45.3333740234375" text="Adult" />
                   <TableColumn fx:id="extraChildM" maxWidth="100.0" prefWidth="43.33331298828125" text="Child" />
-                  <TableColumn fx:id="priceM" maxWidth="120.0" prefWidth="63.3333740234375" text="Price" />
-                  <TableColumn fx:id="statusM" prefWidth="49.33343505859375" text="Status" />
-                  <TableColumn fx:id="dateM" maxWidth="100.0" minWidth="50.0" prefWidth="70.0" text="Date" />
+                  <TableColumn fx:id="priceM" maxWidth="120.0" prefWidth="47.33331298828125" text="Price" />
+                  <TableColumn fx:id="statusM" prefWidth="76.00006103515625" text="Status" />
+                  <TableColumn fx:id="dateM" maxWidth="100.0" minWidth="50.0" prefWidth="62.66668701171875" text="Date" />
                   <TableColumn fx:id="observation" prefWidth="74.0" text="Observation" />
               </columns>
             </TableView>
          </content>
       </ScrollPane>
       <Separator layoutY="35.0" prefHeight="4.0" prefWidth="800.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-      <Button layoutX="1.0" layoutY="42.0" mnemonicParsing="false" onAction="#translateDashboard" text="=">
+      <Button layoutX="1.0" layoutY="42.0" mnemonicParsing="false" onAction="#translateDashboard" style="-fx-background-color: #C4DDFF;" text="=">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <AnchorPane layoutX="195.0" layoutY="45.0" prefHeight="30.0" prefWidth="377.0" style="-fx-background-color: b9a08a;" />
       <Button layoutX="3.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToDashboard" style="-fx-background-color: b9a08a;">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
          <graphic>
 			        <ImageView>
-			            <Image url="C:\Users\hp\Downloads\rewind-button.png" />
+			            <Image url="@../images/rewind-button.png" />
 			        </ImageView>
 		    	</graphic>
       </Button>
       <VBox layoutX="737.0" layoutY="160.0" prefHeight="188.0" prefWidth="53.0" spacing="20.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#switchToAddNewBooking" prefHeight="45.0" prefWidth="45.0">
+            <Button mnemonicParsing="false" onAction="#switchToAddNewBooking" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #C4DDFF;">
              <graphic>
 			        <ImageView>
-			            <Image url="C:\Users\hp\Downloads\bouton-ajouter (1).png" />
+			            <Image url="@../images/bouton-ajouter (1).png" />
 			        </ImageView>
 		    	</graphic>
             </Button>
-            <Button mnemonicParsing="false" onAction="#switchToModifyBookingRoom" prefHeight="45.0" prefWidth="45.0">
+            <Button mnemonicParsing="false" onAction="#switchToModifyBookingRoom" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #C4DDFF;">
              <graphic>
 			        <ImageView>
-			            <Image url="C:\Users\hp\Downloads\edit-button.png" />
+			            <Image url="@../images/edit-button.png" />
 			        </ImageView>
 		    	</graphic>
             </Button>
-            <Button mnemonicParsing="false" onAction="#uploadStatut" prefHeight="45.0" prefWidth="45.0">
+            <Button mnemonicParsing="false" onAction="#uploadStatut" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #C4DDFF;">
              <graphic>
 			        <ImageView>
-			            <Image url="C:\Users\hp\Downloads\clipboard.png" />
+			            <Image url="@../images/clipboard.png" />
 			        </ImageView>
 		    	</graphic>
             </Button>
@@ -106,13 +95,24 @@
          </padding>
       </VBox>
       <TextField fx:id="clientName" layoutX="518.0" layoutY="435.0" prefHeight="30.0" prefWidth="170.0" promptText="Search by client's name" />
-      <Button layoutX="686.0" layoutY="436.0" mnemonicParsing="false" onAction="#SearchBookingRoom" prefHeight="27.0" prefWidth="31.0">
+      <Button layoutX="686.0" layoutY="436.0" mnemonicParsing="false" onAction="#SearchBookingRoom" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: #C4DDFF;">
          <graphic>
 	        	<ImageView>
-		            <Image url="C:\Users\hp\Downloads\search.png" />
+		            <Image url="@../images/search.png" />
 		        </ImageView>
 		 </graphic>
       </Button>
+      
+      
+       <TextField fx:id="currentDate" alignment="CENTER" editable="false" layoutX="554.0" layoutY="4.0" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #b9a08a; -fx-text-fill: #C4DDFF;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="currentTime" alignment="CENTER" editable="false" layoutX="668.0" layoutY="4.0" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #b9a08a; -fx-text-fill: #C4DDFF;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
       <AnchorPane fx:id="sliderDashboard" layoutX="-156.0" layoutY="63.0" prefHeight="378.0" prefWidth="150.0" style="-fx-background-color: #b9a08a;">
          <opaqueInsets>
             <Insets />
@@ -159,23 +159,32 @@
             <Separator layoutX="1.0" layoutY="372.0" prefWidth="150.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
          </children>
       </AnchorPane>
-      <Button layoutX="751.0" layoutY="435.0" mnemonicParsing="false" onAction="#switchToBookingRoom" prefHeight="27.0" prefWidth="31.0">
+      <Button layoutX="751.0" layoutY="435.0" mnemonicParsing="false" onAction="#switchToBookingRoom" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: #C4DDFF;">
          <graphic>
             <ImageView>
                <image>
-                  <Image url="C:\Users\hp\Downloads\bouton-actualiser.png" />
+                  <Image url="@../images/bouton-actualiser.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <AnchorPane fx:id="statutSlider" layoutX="598.0" layoutY="310.0" prefHeight="85.0" prefWidth="139.0" style="-fx-background-color: white;" visible="false">
+      <AnchorPane fx:id="statutSlider" layoutX="587.0" layoutY="310.0" prefHeight="85.0" prefWidth="150.0" style="-fx-background-color: white;" visible="false">
          <children>
-            <ComboBox fx:id="StatutUpdate" layoutY="6.0" prefHeight="25.0" prefWidth="135.0" />
-            <Button layoutX="5.0" layoutY="51.0" mnemonicParsing="false" onAction="#changeStatutBookingRoom" prefHeight="27.0" prefWidth="31.0">
+            <ComboBox fx:id="StatutUpdate" layoutX="6.0" layoutY="6.0" prefHeight="25.0" prefWidth="135.0" />
+            <Button layoutX="20.0" layoutY="51.0" mnemonicParsing="false" onAction="#changeStatutBookingRoom" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: #4E6C50;">
                <graphic>
                   <ImageView>
                      <image>
-                        <Image url="@../../../../Downloads/check.png" />
+                        <Image url="@../images/check.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="90.0" layoutY="51.0" mnemonicParsing="false" onAction="#switchToBookingRoom" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: #B33030;">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../images/cancel.png" />
                      </image>
                   </ImageView>
                </graphic>

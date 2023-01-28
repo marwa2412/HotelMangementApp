@@ -39,15 +39,27 @@ public class hotelModel {
 		String now =dateFormat.format(dateNow);
 
 	 
-	 //connection to DB parametres
+	 /**
+	  * This is a Java method that establishes a connection to a MySQL database named "hotel" on the localhost 
+	    using the JDBC driver. The method takes no parameters and returns a Connection object. The method uses 
+	    the user name "root" and password "3064" to connect to the database.
+	  * @return
+	  * @throws SQLException
+	  */
 	public static Connection connectionToDB() throws SQLException {
 		 String userDB="root";
 		 String passwordDB="3064";
 		 Connection cnx= DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel?useSSL=false",userDB,passwordDB);//Establishing Connection
 		 return cnx;
 	 }
-	
-	 
+	/**
+	 * This code is a  constructor for the hotelModel class. It appears to be initializing several instance variables 
+	  (Rooms, Clients, BookingRooms, and BookingActivities) by querying a database using JDBC and creating objects based 
+	   on the results of those queries. Specifically, it is creating PreparedStatements for each query, executing those 
+	   statements and iterating through the ResultSets to create objects and add them to the corresponding observableArrayList. 
+	   The queries are selecting all data from tables named "rooms", "clients", "bookingrooms" and "bookingactivities" respectively. 
+	   The objects being created are rooms, clients, bookingRooms, and bookingActivities.
+	 */
 	 public hotelModel() {		
 		 try { 	
  			String query2 = "SELECT * FROM rooms";
@@ -135,13 +147,14 @@ public class hotelModel {
 	 			  int persons=rs6.getInt("persons");
 	 			  String spot=rs6.getString("spot");
 	 			  int price=rs6.getInt("price");
-			 	activities activityObj = new activities(ID,type,  date,  time,  persons,  spot, price);
+	 			 int res=rs6.getInt("reserved");
+			 	activities activityObj = new activities(ID,type,  date,  time,  persons,  spot, price,res);
 			 	
 			 	Activities.add(activityObj);
 
 
 		 	}	
- 		 String query7 = "SELECT dateActivity , typeActivity FROM activities";
+ 		 String query7 = "SELECT dateActivity , typeActivity FROM activities WHERE reserved < persons";
 			PreparedStatement preparedStmt7 = connectionToDB().prepareStatement(query7);
 		    ResultSet rs7 = preparedStmt7.executeQuery();   
 		    Activities2 = FXCollections.observableArrayList();
@@ -168,8 +181,9 @@ public class hotelModel {
 
 
 		 		   }
-			    String query9 = "SELECT numRoom FROM rooms";
+			    String query9 = "SELECT numRoom FROM rooms WHERE statue=?";
 				PreparedStatement preparedStmt9 = connectionToDB().prepareStatement(query9);
+				preparedStmt9.setString(1, "empty");
 			    ResultSet rs9 = preparedStmt9.executeQuery();   
 			    Rooms2 = FXCollections.observableArrayList();
 			    while(rs9.next()) {
@@ -206,7 +220,10 @@ public class hotelModel {
 		 	}
 		 
 	 }
-	
+	 /**
+	  * getter of CheckaIn number
+	  * @return
+	  */
 	  public  int getnumCheckIN() {
 		  return numCheckIN;
 	  }
@@ -223,6 +240,10 @@ public class hotelModel {
 	 public ObservableList<rooms> getRoomsList(){
 		 return Rooms;
 	 }
+	 /**
+	  * he method "getBookingActivitiesList()" is a getter method that returns an ObservableList of type "bookingActivities". 
+	  * @return
+	  */
 	 public ObservableList<bookingActivities> getBookingActivitiesList(){
 		 return BookingActivities;
 	 }

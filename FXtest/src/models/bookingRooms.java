@@ -24,7 +24,22 @@ public class bookingRooms {
 	private SimpleStringProperty dateBooking = new SimpleStringProperty();
 
 	private static ObservableList<bookingRooms> BookingRoom;
-
+/**
+ * This is a constructor for a class called "bookingRooms". It initializes all the class variables such 
+  as client, room, checkInDate, checkOutDate, checkTime, extraAdult, extraChild, price, status, now, needs.
+   The super() call invokes the constructor of the parent class. numBook is set to zero .
+ * @param client
+ * @param room
+ * @param checkInDate
+ * @param checkOutDate
+ * @param checkTime
+ * @param extraAdult
+ * @param extraChild
+ * @param price
+ * @param status
+ * @param now
+ * @param needs
+ */
 	public bookingRooms(String client, int room, String checkInDate, String checkOutDate,
 			int checkTime, int extraAdult, int extraChild, int price, String status, String now, String needs) {
 		super();
@@ -41,7 +56,22 @@ public class bookingRooms {
 		this.needs.set(needs);
 		this.client.set(client);
 	}
-	
+	/**
+	 * This is a constructor for a class called "bookingRooms". It initializes all the class variables such 
+	  as client, room, checkInDate, checkOutDate, checkTime, extraAdult, extraChild, price, status, now, needs.
+	   The super() call invokes the constructor of the parent class.
+	 * @param client
+	 * @param room
+	 * @param checkInDate
+	 * @param checkOutDate
+	 * @param checkTime
+	 * @param extraAdult
+	 * @param extraChild
+	 * @param price
+	 * @param status
+	 * @param now
+	 * @param needs
+	 */
 	public bookingRooms(int id ,String client, int room, String checkInDate, String checkOutDate,
 			int checkTime, int extraAdult, int extraChild, int price, String status, String now, String needs) {
 		super();
@@ -71,9 +101,17 @@ public class bookingRooms {
 	public void setClient(String client) {
 		this.client.set(client);
 	}
+	/**
+	 * getter of room's number
+	 * @return
+	 */
 	public int getRoom() {
 		return room.get();
 	}
+	/**
+	 * setter of room's number
+	 * @param room
+	 */
 	public void setRoom(int room) {
 		this.room.set(room);
 	}
@@ -134,7 +172,19 @@ public class bookingRooms {
 	}
 	
 	
-
+	/**
+	 * This is a method called "saveNewBookingM" that takes in a "bookingRooms" object as a parameter. 
+	  It is used to save a new booking to a database. The method starts by creating a SQL query 
+	  "INSERT INTO bookingrooms(...) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)" which is used to insert new 
+	  data into the "bookingrooms" table of the database. The method then creates a prepared statement 
+	  using the connectionToDB method, which is used to establish a connection to the database, and the SQL query.
+	  It then sets the values for the prepared statement using the setter methods of the "bookingRoomObj" 
+	  object passed as a parameter. The values being set are price, status, checkInDate, checkTime, dateBooking,
+	  checkOutDate, client, extraAdult, extraChild, room, needs.
+	  After setting the values, the method execute the prepared statement using the executeUpdate() method and closes
+	  the connection to the database. If there is an exception, it will print an error message and the stack trace of the error.
+	 * @param bookingRoomObj
+	 */
 	 public static void saveNewBookingM(bookingRooms bookingRoomObj) {
 		 try {	 
 				System.out.println("Logged succ to try");
@@ -163,6 +213,16 @@ public class bookingRooms {
 				}
 	 }
 	 
+	 /**
+	  * This code is a  method that updates a booking in a database table called "bookingrooms".
+	    It takes an object of the "bookingRooms" class as a parameter. The method uses a prepared statement 
+	    to update the rows in the table with the values from the object passed as a parameter.
+	     The method first creates a query string to update the table, and then uses the set methods 
+	     of the prepared statement to set the values of the columns in the table to the corresponding values
+	     from the object. The method then executes the update and closes the connection to the database. 
+	     If there is an error in the connection, the method will print out an error message and the stack trace.
+	  * @param bookingRoomObj
+	  */
 	 public static void ModifyBookingM(bookingRooms bookingRoomObj) {
 		 try {	  
 				System.out.println("Logged succ to try");
@@ -194,7 +254,14 @@ public class bookingRooms {
 				}
 	 }
 	 
-	 
+	/**
+	 * This is a method  that updates the status of a booking in a database table called "bookingrooms".
+	   The method takes in an object of type "bookingRooms" as a parameter. The method uses a PreparedStatement 
+	   to update the "Status" column in the "bookingrooms" table where the "idBooking" column matches the "numBook"
+	   attribute of the "bookingRoomObj" object. The method also prints out messages to indicate if the update was
+	   successful or if there was an error in the connection.
+	 * @param bookingRoomObj
+	 */
 	 public static void changeStatutBookingM(bookingRooms bookingRoomObj) {
 		 try {	  
 				System.out.println("Logged succ to try");
@@ -216,6 +283,16 @@ public class bookingRooms {
 				e.printStackTrace();
 				}
 	 }
+	 
+	 /**
+	  * This is a method that searches for a booking in a database table called "bookingrooms" based on the client ID.
+	    The method takes in a String "name" as a parameter. The method uses a PreparedStatement to query the "bookingrooms" 
+	    table and select all columns where the "clientId" column matches the value of the "name" parameter passed in.
+	    The method then creates an observableArrayList called "BookingRoom" and iterates through the ResultSet of 
+	    the query adding each row to the observableArrayList as a new "bookingRooms" object with the values from each column.
+	    The method also prints out a message if there is an error in the connection.
+	  * @param name
+	  */
 	 public static void SearchBookingRoom(String name) {
 		 try {	 
 			 String query3 = "SELECT * FROM bookingrooms WHERE clientId=?";
@@ -248,6 +325,10 @@ public class bookingRooms {
 				e.printStackTrace();
 				}
 	 }
+	 /**
+	  * This is a method that returns an ObservableList of "bookingRooms" objects.
+	  * @return
+	  */
 	 public static ObservableList<bookingRooms> getBookingRoomSearched(){
 		 return BookingRoom;
 	 }

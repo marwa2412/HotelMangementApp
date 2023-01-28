@@ -3,7 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -13,42 +12,31 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="771.0" style="-fx-background-color: #C8B49C" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneControllerNewBookingRoom">
    <children>
-      <Circle fill="#b9a08a" layoutX="678.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
       <Circle fill="#b9a08a" layoutX="749.0" layoutY="18.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="734.0" layoutY="3.0" onMouseClicked="#switchToLogin" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Downloads/utilisateur.png" />
+            <Image url="@../images/utilisateur.png" />
          </image>
       </ImageView>
-      <Circle fill="#b9a08a" layoutX="713.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
-      <TextField fx:id="currentDate" alignment="CENTER" editable="false" layoutX="457.0" layoutY="4.0" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #b9a08a;">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></TextField>
-      <TextField fx:id="currentTime" alignment="CENTER" editable="false" layoutX="570.0" layoutY="4.0" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #b9a08a;">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </TextField>
-      <Label layoutX="42.0" layoutY="3.0" prefHeight="30.0" prefWidth="301.0" text="Luxurious Hotel ">
+      
+      <Label layoutX="42.0" layoutY="3.0" prefHeight="30.0" prefWidth="301.0" text="Luxurious Hotel - Booking">
          <font>
             <Font name="Berlin Sans FB" size="22.0" />
          </font>
       </Label>
       <Separator layoutY="35.0" prefHeight="4.0" prefWidth="771.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-      <Button layoutX="1.0" layoutY="42.0" mnemonicParsing="false" onAction="#translateDashboard" text="=">
+      <Button layoutX="1.0" layoutY="42.0" mnemonicParsing="false" onAction="#translateDashboard" style="-fx-background-color: #C4DDFF;" text="=">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
           
       </Button>
       <AnchorPane layoutX="337.0" layoutY="399.0" prefHeight="32.0" prefWidth="150.0" style="-fx-background-color: #C8B49C;" />
-      <Label layoutX="211.0" layoutY="336.0" prefHeight="25.0" prefWidth="73.0" text="Price">
+      <Label layoutX="29.0" layoutY="336.0" prefHeight="25.0" prefWidth="73.0" text="Price">
          <font>
             <Font size="18.0" />
          </font>
@@ -59,11 +47,6 @@
          </font>
       </Label>
       <Label layoutX="27.0" layoutY="123.0" prefHeight="32.0" prefWidth="101.0" text="Check-In">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="27.0" layoutY="336.0" text="Status">
          <font>
             <Font size="18.0" />
          </font>
@@ -85,8 +68,7 @@
       </Label>
       <TextField fx:id="extraChild" layoutX="27.0" layoutY="301.0" />
       <TextField fx:id="extraAdult" layoutX="212.0" layoutY="301.0" />
-      <TextField fx:id="Price" layoutX="212.0" layoutY="372.0" />
-      <ComboBox fx:id="Statut" layoutX="27.0" layoutY="372.0" prefWidth="150.0" promptText="Confirmed" />
+      <TextField fx:id="Price" layoutX="27.0" layoutY="372.0" />
       <DatePicker fx:id="checkOutDate" layoutX="24.0" layoutY="225.0" prefHeight="25.0" prefWidth="149.0" promptText="Date" />
       <DatePicker fx:id="checkInDate" layoutX="23.0" layoutY="155.0" prefHeight="25.0" prefWidth="149.0" promptText="Date" />
       <TextField fx:id="checkOutTime" layoutX="212.0" layoutY="225.0" prefHeight="25.0" prefWidth="73.0" promptText="TIME" />
@@ -98,24 +80,24 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="468.0" layoutY="298.0" prefHeight="32.0" prefWidth="101.0" text="Rooms List">
+      <Label layoutX="468.0" layoutY="298.0" prefHeight="32.0" prefWidth="125.0" text="Empty Rooms">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="clientList" layoutX="464.0" layoutY="266.0" prefHeight="32.0" prefWidth="259.0" />
+      <ChoiceBox fx:id="clientList" layoutX="464.0" layoutY="265.0" prefHeight="32.0" prefWidth="259.0" />
       <ChoiceBox fx:id="roomList" layoutX="464.0" layoutY="334.0" prefHeight="32.0" prefWidth="259.0" />
-      <Button layoutX="656.0" layoutY="397.0" mnemonicParsing="false" onAction="#switchToBookingRoom" prefHeight="25.0" prefWidth="73.0" text="Cancel">
+      <Button layoutX="644.0" layoutY="397.0" mnemonicParsing="false" onAction="#switchToBookingRoom" prefHeight="32.0" prefWidth="85.0" style="-fx-background-color: #B33030;" text="Cancel">
        <graphic>
 		        <ImageView>
-		            <Image url="C:\Users\hp\Downloads\cancel.png" />
+		            <Image url="@../images/cancel.png" />
 		        </ImageView>
 		  </graphic>
 		</Button>	
-      <Button defaultButton="true" layoutX="569.0" layoutY="397.0" mnemonicParsing="false" onAction="#saveNewBooking" prefHeight="25.0" prefWidth="73.0" text="Save">
+      <Button layoutX="548.0" layoutY="397.0" mnemonicParsing="false" onAction="#saveNewBooking" prefHeight="32.0" prefWidth="85.0" style="-fx-background-color: #4E6C50;" text="Save">
 	      <graphic>
 		        <ImageView>
-		            <Image url="C:\Users\hp\Downloads\check.png" />
+		            <Image url="@../images/check.png" />
 		        </ImageView>
 		  </graphic>
 	  </Button>	
@@ -132,11 +114,21 @@
          <graphic>
             <ImageView>
                <image>
-                  <Image url="C:\Users\hp\Downloads\rewind-button.png" />
+                  <Image url="@../images/rewind-button.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
+      
+      <TextField fx:id="currentDate" alignment="CENTER" editable="false" layoutX="526.0" layoutY="4.0" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #b9a08a; -fx-text-fill: #C4DDFF;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="currentTime" alignment="CENTER" editable="false" layoutX="639.0" layoutY="4.0" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #b9a08a; -fx-text-fill: #C4DDFF;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
       <AnchorPane fx:id="sliderDashboard" layoutX="-162.0" layoutY="63.0" prefHeight="378.0" prefWidth="150.0" style="-fx-background-color: #b9a08a;">
          <opaqueInsets>
             <Insets />

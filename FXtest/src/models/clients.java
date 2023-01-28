@@ -17,6 +17,8 @@ public class clients {
 	private SimpleStringProperty phone = new SimpleStringProperty();
 	private SimpleStringProperty email = new SimpleStringProperty();
 	private static ObservableList<clients> Clients;
+	
+	
 	public clients(String fullName, String cin, String sexe, String nationality, String phone,String email) {
 		super();
 		this.ID.set(0);
@@ -27,17 +29,18 @@ public class clients {
 		this.phone.set(phone);
 		this.email.set(email);
 	}
-	public clients(String fullName, String cin) {
-		super();
-		this.ID.set(0);
-		this.fullName.set(fullName);
-		this.cin.set(cin);
-		this.sexe.set("0");
-		this.nationality.set("0");
-		this.phone.set("0");
-		this.email.set("0");
-	}
 	
+	/**
+	 * This is a constructor method for a class called "clients." It initializes the ID, fullName, cin, sexe, 
+	   nationality, phone, and email fields of an object of the class with the corresponding parameters passed to the constructor. 
+	 * @param id
+	 * @param fullName
+	 * @param cin
+	 * @param sexe
+	 * @param nationality
+	 * @param phone
+	 * @param email
+	 */
 	public clients(int id,String fullName, String cin, String sexe, String nationality, String phone,String email) {
 		super();
 		this.ID.set(id);
@@ -60,9 +63,17 @@ public class clients {
 	public void setFullName(String fullName) {
 		this.fullName.set(fullName);
 	}
+	/**
+	 * getter of client's CIN
+	 * @return
+	 */
 	public String getCin() {
 		return cin.get();
 	}
+	/**
+	 * setter of client's CIN
+	 * @param cin
+	 */
 	public void setCin(String cin) {
 		this.cin.set(cin);
 	}
@@ -91,6 +102,17 @@ public class clients {
 	public void setEmaik(String email) {
 		this.email.set(email);
 	}
+	/**
+	 * This is a method called "saveNewClientM" that appears to take an object of the "clients" class as a parameter.
+	   This method uses a prepared statement to insert a new client record into a database table named "clients".
+       It calls the 'connectionToDB()' method to connect to the database, creates a prepared statement with a SQL
+       query to insert the client information into the clients table. Then it set the values of the prepared statement 
+       with the information from the 'ClientsObj' object passed as a parameter.It then calls the 'executeUpdate()' 
+       method to execute the prepared statement, which will insert the new client record into the database.
+       Finally, it closes the connection to the database and prepared statement. If there is any error in connecting 
+       to the database the catch block will handle it and print the error message.
+	 * @param ClientsObj
+	 */
 	 public static void saveNewClientM(clients ClientsObj) {
 		 try {	 
 				System.out.println("Logged succ to try");
@@ -113,6 +135,19 @@ public class clients {
 				}
 	 }
 	 
+	 /**
+	  * This method is called "ModifyClientM" and it appears to take an object of the "clients" class as a parameter.
+		This method is similar to the saveNewClientM, but it updates an existing client record in the database table
+	    named "clients". It also uses a prepared statement to update the client record.
+        It calls the 'connectionToDB()' method to connect to the database, creates a prepared statement with a SQL query
+        to update the client information in the clients table. Then it set the values of the prepared statement with 
+        the information from the 'ClientsObj' object passed as a parameter. The final value to be set is the 'idClient' field, 
+        which is used as the WHERE clause for the update statement.
+		It then calls the 'executeUpdate()' method to execute the prepared statement, which will update the client record in 
+		the database. Finally, it closes the connection to the database and prepared statement. 
+		If there is any error in connecting to the database the catch block will handle it and print the error message.
+	  * @param ClientsObj
+	  */
 	 public static void ModifyClientM(clients ClientsObj) {
 		 try {	 
 				System.out.println("Logged succ to try");
@@ -136,6 +171,15 @@ public class clients {
 				e.printStackTrace();
 				}
 	 }
+	 /**
+	  * This code  is a  method called "SearchClient" that takes in a parameter of type String called "CIN". 
+	    The method uses a prepared statement to execute a SQL query that selects all columns from the "clients" table 
+	    where the "cin" column is equal to the passed in "CIN" parameter. The results of the query are stored in a 
+	    ResultSet object called "rs3". The method then creates an observable array list called "Clients" and loops 
+	    through the ResultSet, creating new client objects with the retrieved information and adding them to the "Clients" list. 
+	    If there is an exception, it will print "Error in connection" and the stack trace of the error.
+	  * @param CIN
+	  */
 	 public static void SearchClient(String CIN) {
 		 try {	 
 			 String query3 = "SELECT * FROM clients WHERE cin=?";
@@ -162,7 +206,10 @@ public class clients {
 				e.printStackTrace();
 				}
 	 }
-	 
+	 /**
+	  * This code  is a method called "getClientsSearched" that returns an ObservableList of "clients" objects. 
+	  * @return
+	  */
 	 public static ObservableList<clients> getClientsSearched(){
 		 return Clients;
 	 }
