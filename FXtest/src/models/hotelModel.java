@@ -2,16 +2,16 @@ package models;
 
 import java.sql.Connection;
 
+
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-import javax.swing.JOptionPane;
 import javafx.collections.*;
 import javafx.collections.ObservableList;
 
@@ -20,13 +20,24 @@ import javafx.collections.ObservableList;
 public class hotelModel {
 	
 	
-	
+	 static int numActivities;
+	 static int numCheckOUT;
+	 static int numCheckIN;
 	 ObservableList<rooms> Rooms;
 	 ObservableList<bookingActivities> BookingActivities;
 	 ObservableList<bookingRooms> BookingRooms ;
 	 ObservableList<clients> Clients;
 	 ObservableList<activities> Activities ;
-	 
+	 ObservableList<String> Clients3;
+	 ObservableList<String> Clients2;
+	 ObservableList<String> Activities2 ;
+	 ObservableList<String> Activities3 ;
+	 ObservableList<String> Rooms2 ;
+
+	 DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date dateNow = new Date();
+		String now =dateFormat.format(dateNow);
+
 	 
 	 //connection to DB parametres
 	public static Connection connectionToDB() throws SQLException {
@@ -55,7 +66,6 @@ public class hotelModel {
  				 int priceRoom=rs2.getInt("price");
  				 rooms Roomobj = new rooms(ID,numRoom, numFloor, typeRoom, viewRoom,statueRoom,cleaningRoom, techProbs, priceRoom) ;
  				 Rooms.add(Roomobj);
- 				 System.out.print("query2");
 
  			}
  			String query3 = "SELECT * FROM clients";
@@ -72,36 +82,47 @@ public class hotelModel {
  				 String phone=rs3.getString("phone");
  				 clients Client = new clients(ID,fullName,  cin,  sexe,  nationality,  phone,email) ;
  				Clients.add(Client);	
-				 System.out.print("query3");
 
  			}
  			String query4 = "SELECT * FROM bookingrooms";
  			PreparedStatement preparedStmt4 = connectionToDB().prepareStatement(query4);
  		 	ResultSet rs4 = preparedStmt4.executeQuery();
  		 	BookingRooms = FXCollections.observableArrayList();
- 		 	System.out.print("\n Start \n");
  			while(rs4.next()) {
  				int ID=rs4.getInt("idBooking");
-				 String room=rs4.getString("room");
+				 int room=rs4.getInt("room");
 				 String datein=rs4.getString("checkInDate");
 				 String dateout=rs4.getString("checkOutDate");
-				 String outTime=rs4.getString("checkOutTime");
-				 String adult=rs4.getString("extraAdult");
-				 String child=rs4.getString("extraChild");
-				 String price=rs4.getString("price");
+				 int outTime=rs4.getInt("checkOutTime");
+				 int adult=rs4.getInt("extraAdult");
+				 int child=rs4.getInt("extraChild");
+				 int price=rs4.getInt("price");
 				 String statut=rs4.getString("status");
 				 String now=rs4.getString("dateBooking");
 				 String needs=rs4.getString("clientNeeds");
 				 String IDclient=rs4.getString("clientId");
  				bookingRooms bookingRoomObj = new bookingRooms(ID,IDclient,room,datein,dateout,outTime,adult,child,price,statut,now,needs);
  				BookingRooms.add(bookingRoomObj);	
-				 System.out.print("query4");
-
- 	 			
-
-
  			}
- 			
+ 			String query5 = "SELECT * FROM bookingactivities";
+ 			PreparedStatement preparedStmt5 = connectionToDB().prepareStatement(query5);
+ 		    ResultSet rs5 = preparedStmt5.executeQuery();
+ 		    
+ 		   BookingActivities = FXCollections.observableArrayList();
+
+ 		  while(rs5.next()) {
+ 			  int ID=rs5.getInt("idActivity");
+ 			  String activityType= rs5.getString("ActivityType");
+ 			 String activityDate =rs5.getString("ActivityDate");
+ 			  String clientCIN = rs5.getString("clientCIN");	
+ 			 String clientName= rs5.getString("clientName");
+ 			  String now=rs5.getString("dateBookingActivity");
+ 			 String status= rs5.getString("status");
+ 				 bookingActivities bookingActivitiesObj = new bookingActivities(ID,activityType,activityDate, clientCIN,clientName,now,status);
+ 				BookingActivities.add(bookingActivitiesObj);
+
+
+ 		   }
  		    String query6 = "SELECT * FROM activities";
 			PreparedStatement preparedStmt6 = connectionToDB().prepareStatement(query6);
 		 	ResultSet rs6 = preparedStmt6.executeQuery();
@@ -114,49 +135,88 @@ public class hotelModel {
 	 			  int persons=rs6.getInt("persons");
 	 			  String spot=rs6.getString("spot");
 	 			  int price=rs6.getInt("price");
-	 			  System.out.println(ID);
-	 			  System.out.println(type);
-	 			  System.out.println(date);
-	 			  System.out.println(time);
-	 			  System.out.println(persons);
-	 			  System.out.println(spot);
-	 			  System.out.println(price);
-
 			 	activities activityObj = new activities(ID,type,  date,  time,  persons,  spot, price);
-	 			  System.out.println("passe");
-	 			  System.out.println(activityObj);
-
-
+			 	
 			 	Activities.add(activityObj);
-				 System.out.print(Activities);
 
-				 System.out.print("query6");
 
-		 	}
-		 	String query5 = "SELECT * FROM bookingactivities";
- 			PreparedStatement preparedStmt5 = connectionToDB().prepareStatement(query5);
- 		    ResultSet rs5 = preparedStmt5.executeQuery();
- 		    
- 		   BookingActivities = FXCollections.observableArrayList();
+		 	}	
+ 		 String query7 = "SELECT dateActivity , typeActivity FROM activities";
+			PreparedStatement preparedStmt7 = connectionToDB().prepareStatement(query7);
+		    ResultSet rs7 = preparedStmt7.executeQuery();   
+		    Activities2 = FXCollections.observableArrayList();
+		    Activities3 = FXCollections.observableArrayList();
+		    while(rs7.next()) {
+	 			String activityObj2=rs7.getString("typeActivity");
+	 			Activities2.add(activityObj2);
+	 			String activityObj3=rs7.getString("dateActivity");
+	 			Activities3.add(activityObj3);
 
- 		  while(rs5.next()) {
- 			  int ID=rs5.getInt("idActivity");
- 			  String activityList=rs5.getString("Activity");
- 			  String clientList=rs5.getString("clientId");
- 			  String now=rs5.getString("dateBookingActivity");
- 				 bookingActivities bookingActivitiesObj = new bookingActivities(ID,activityList, clientList,now);
- 				BookingActivities.add(bookingActivitiesObj);
-				 System.out.print("query5");
 
- 		   }
-		 	
+	 		   }
+
+		    String query8 = "SELECT cin ,  fullName FROM clients";
+				PreparedStatement preparedStmt8 = connectionToDB().prepareStatement(query8);
+			    ResultSet rs8 = preparedStmt8.executeQuery();   
+			    Clients2 = FXCollections.observableArrayList();
+			    Clients3 = FXCollections.observableArrayList();
+			    while(rs8.next()) {
+		 			  String clientcin=rs8.getString("cin");
+		 			 Clients2.add(clientcin);	
+		 			 String clientname=rs8.getString("fullName");
+	 				Clients3.add(clientname);	
+
+
+		 		   }
+			    String query9 = "SELECT numRoom FROM rooms";
+				PreparedStatement preparedStmt9 = connectionToDB().prepareStatement(query9);
+			    ResultSet rs9 = preparedStmt9.executeQuery();   
+			    Rooms2 = FXCollections.observableArrayList();
+			    while(rs9.next()) {
+		 			  String room=rs9.getString("numRoom");
+		 			Rooms2.add(room);
+
+		 		   }
+			    String query10 = "SELECT COUNT(*) AS numCheckIN FROM bookingrooms  WHERE checkInDate = ?  ";
+				PreparedStatement preparedStmt10 = connectionToDB().prepareStatement(query10);
+				preparedStmt10.setString (1, now);
+			    ResultSet rs10 = preparedStmt10.executeQuery();   
+			    while(rs10.next()) {
+				     numCheckIN=rs10.getInt("numCheckIN");
+		 		   }
+	  
+			    String query11 = "SELECT COUNT(*) AS numCheckOUT FROM bookingrooms  WHERE checkOutDate = ?  ";
+				PreparedStatement preparedStmt11 = connectionToDB().prepareStatement(query11);
+				preparedStmt11.setString (1, now);
+			    ResultSet rs11 = preparedStmt11.executeQuery(); 
+			    while(rs11.next()) {
+		 		 numCheckOUT=rs11.getInt("numCheckOUT");
+			    	}
+		 		String query12 = "SELECT COUNT(*) AS numActivities FROM activities  WHERE dateActivity = ?  ";
+				PreparedStatement preparedStmt12 = connectionToDB().prepareStatement(query12);
+				preparedStmt12.setString (1, now);
+			    ResultSet rs12 = preparedStmt12.executeQuery();  
+			    while(rs12.next()) {
+			    	numActivities=rs12.getInt("numActivities");
+				    	}		 		
 		 	  }catch(Exception e){
 		 	    System.out.println("Error in connection"+ e);
 
 		 	e.printStackTrace();
 		 	}
+		 
 	 }
-	 
+	
+	  public  int getnumCheckIN() {
+		  return numCheckIN;
+	  }
+	  public  int getnumCheckOUT() {
+		  return numCheckOUT;
+	  }
+	  public  int getNumActivities() {
+		  return numActivities;
+	  }
+	  
 	 
 	 
 	 
@@ -173,7 +233,22 @@ public class hotelModel {
 	 public ObservableList<clients> getClientsList(){
 		 return Clients;
 	 }
+	 public ObservableList<String> getClientsList2(){
+		 return Clients2; //CIN
+	 }
+	 public ObservableList<String> getClientsList3(){
+		 return Clients3;//NAME
+	 }
 	 public ObservableList<activities> getActivitiesList(){
 		 return Activities;
+	 }
+	 public ObservableList<String> getActivities2(){
+		 return Activities2; //TYPE
+	 }
+	 public ObservableList<String> getActivities3(){
+		 return Activities3;//DATE
+	 }
+	 public ObservableList<String> getRooms2(){
+		 return Rooms2;
 	 }
 }

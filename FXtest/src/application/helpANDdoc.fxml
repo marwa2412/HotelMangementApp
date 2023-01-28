@@ -4,10 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -40,26 +37,6 @@
             <Font name="Berlin Sans FB" size="22.0" />
          </font>
       </Label>
-      <ScrollPane layoutX="18.0" layoutY="83.0" maxHeight="347.0" maxWidth="712.0" minHeight="347.0" minWidth="712.0" prefHeight="347.0" prefWidth="712.0">
-         <content>
-            <TableView fx:id="bookingTable" maxHeight="347.0" maxWidth="712.0" minHeight="347.0" minWidth="712.0" prefHeight="347.0" prefWidth="712.0">
-              <columns>
-                <TableColumn fx:id="numB" maxWidth="500.0" prefWidth="48.66665971279144" text="N°Book" />
-                <TableColumn fx:id="clientM" maxWidth="500.0" prefWidth="56.66665267944336" text="N°Client" />
-                  <TableColumn fx:id="roomM" maxWidth="200.0" prefWidth="54.0" text="N°Room" />
-                  <TableColumn fx:id="checkInM" maxWidth="200.0" minWidth="50.0" prefWidth="70.0" text="Check_In" />
-                  <TableColumn fx:id="checkOutM" maxWidth="200.0" minWidth="50.0" prefWidth="70.0" text="Check_Out" />
-                  <TableColumn fx:id="timeM" maxWidth="90.0" prefWidth="45.3333740234375" text="Time" />
-                  <TableColumn fx:id="extraAdultM" maxWidth="100.0" prefWidth="45.3333740234375" text="Adult" />
-                  <TableColumn fx:id="extraChildM" maxWidth="100.0" prefWidth="43.33331298828125" text="Child" />
-                  <TableColumn fx:id="priceM" maxWidth="120.0" prefWidth="63.3333740234375" text="Price" />
-                  <TableColumn fx:id="statusM" prefWidth="49.33343505859375" text="Status" />
-                  <TableColumn fx:id="dateM" maxWidth="100.0" minWidth="50.0" prefWidth="70.0" text="Date" />
-                  <TableColumn fx:id="observation" prefWidth="74.0" text="Observation" />
-              </columns>
-            </TableView>
-         </content>
-      </ScrollPane>
       <Separator layoutY="35.0" prefHeight="4.0" prefWidth="800.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
       <Button layoutX="1.0" layoutY="42.0" mnemonicParsing="false" onAction="#translateDashboard" text="=">
          <font>

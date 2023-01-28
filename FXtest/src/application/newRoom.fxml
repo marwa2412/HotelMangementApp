@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="377.0" maxWidth="277.0" minHeight="377.0" minWidth="277.0" prefHeight="377.0" prefWidth="277.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneControllerRooms">
+<AnchorPane maxHeight="417.0" maxWidth="277.0" minHeight="377.0" minWidth="277.0" prefHeight="417.0" prefWidth="277.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneControllerRooms">
    <children>
-      <AnchorPane layoutY="-1.0" maxHeight="377.0" maxWidth="277.0" minHeight="377.0" minWidth="277.0" prefHeight="377.0" prefWidth="277.0" style="-fx-background-color: #FFFFFf;">
+      <AnchorPane layoutY="-1.0" maxHeight="418.0" maxWidth="277.0" minHeight="377.0" minWidth="277.0" prefHeight="418.0" prefWidth="277.0" style="-fx-background-color: #FFFFFf;">
          <children>
             <TextField fx:id="TechPrbs" layoutX="119.0" layoutY="221.0" />
             <TextField fx:id="PriceRoom" layoutX="119.0" layoutY="293.0" />
@@ -53,7 +53,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button defaultButton="true" layoutX="41.0" layoutY="337.0" mnemonicParsing="false" onAction="#SaveNewRoom" prefHeight="25.0" prefWidth="82.0" text="Save">
+            <Button defaultButton="true" layoutX="41.0" layoutY="374.0" mnemonicParsing="false" onAction="#SaveNewRoom" prefHeight="25.0" prefWidth="82.0" text="Save">
                 <graphic>
 		        <ImageView>
 		            <Image url="C:\Users\hp\Downloads\check.png" />
@@ -69,12 +69,18 @@
             <TextField fx:id="CleanigStatue" layoutX="119.0" layoutY="258.0" promptText="Yes, by default" />
          </children>
       </AnchorPane>
-      <Button layoutX="151.0" layoutY="335.0" mnemonicParsing="false" onAction="#switchToRooms" prefHeight="25.0" prefWidth="82.0" text="Cancel">
+      <Button layoutX="151.0" layoutY="372.0" mnemonicParsing="false" onAction="#switchToRooms" prefHeight="25.0" prefWidth="82.0" text="Cancel">
          <graphic>
 		        <ImageView>
 		            <Image url="C:\Users\hp\Downloads\cancel.png" />
 		        </ImageView>
 		  </graphic>
       </Button>
+      <TextField fx:id="ViewRoom" layoutX="119.0" layoutY="330.0" />
+      <Label layoutX="7.0" layoutY="330.0" prefHeight="25.0" prefWidth="99.0" text="View">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

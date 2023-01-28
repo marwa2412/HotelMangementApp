@@ -1,8 +1,11 @@
 package models;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javafx.beans.property.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class activities {
 	
@@ -13,6 +16,8 @@ public class activities {
 	private SimpleIntegerProperty persons = new SimpleIntegerProperty();
 	private SimpleIntegerProperty price = new SimpleIntegerProperty();
 	private SimpleStringProperty spot = new SimpleStringProperty();
+	private static ObservableList<activities> Activities;
+
 	public activities(String type, String date, int time, int persons, String spot,int price) {
 		super();
 		this.ID.set(0);
@@ -23,6 +28,17 @@ public class activities {
 		this.spot.set(spot);
 		this.price.set(price);
 	}
+	public activities(String type, String date) {
+		super();
+		this.ID.set(0);
+		this.type.set(type);
+		this.date.set(date);
+		this.time.set(0);
+		this.persons.set(0);
+		this.spot.set("0");
+		this.price.set(0);
+	}
+	
 	public activities(int id,String type, String date, int time, int persons, String spot,int price) {
 		super();
 		this.ID.set(id);
@@ -126,5 +142,38 @@ public class activities {
 				    System.out.println("Error in connection");
 				e.printStackTrace();
 				}
+	 }
+	 
+	 
+	 public static void SearchActivity(String DATE) {
+		 try {	 
+			
+			 String query3 = "SELECT * FROM activities WHERE dateActivity=?";
+	 			PreparedStatement preparedStmt3 = hotelModel.connectionToDB().prepareStatement(query3);
+	 			preparedStmt3.setString (1, DATE);
+	 		 	ResultSet rs3 = preparedStmt3.executeQuery();
+	 		 	Activities = FXCollections.observableArrayList();
+	 		 	
+	 		 	while(rs3.next()) {
+	 		 		 int ID=rs3.getInt("idActivity");
+		 			  String type=rs3.getString("typeActivity");
+		 			  String date=rs3.getString("dateActivity");
+		 			  int time=rs3.getInt("timeActivity");
+		 			  int persons=rs3.getInt("persons");
+		 			  String spot=rs3.getString("spot");
+		 			  int price=rs3.getInt("price");
+				 	activities activityObj = new activities(ID,type,  date,  time,  persons,  spot, price);
+				 	Activities.add(activityObj);	
+
+	 			}
+	 		 
+				}catch(Exception e){
+				    System.out.println("Error in connection");
+				e.printStackTrace();
+				}
+	 }
+	 
+	 public static ObservableList<activities> getActivitiesSearched(){
+		 return Activities;
 	 }
 }

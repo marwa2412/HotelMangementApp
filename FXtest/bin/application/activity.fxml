@@ -20,7 +20,21 @@
    <children>
       <Circle fill="#b9a08a" layoutX="701.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
       <Circle fill="#b9a08a" layoutX="776.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
+       <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="761.0" layoutY="3.0" onMouseClicked="#switchToLogin" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/utilisateur.png" />
+         </image>
+      </ImageView>
       <Circle fill="#b9a08a" layoutX="738.0" layoutY="17.0" radius="15.0" stroke="#B9A08A" strokeType="INSIDE" />
+      <TextField fx:id="currentDate" alignment="CENTER" editable="false" layoutX="457.0" layoutY="4.0" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #b9a08a;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="currentTime" alignment="CENTER" editable="false" layoutX="570.0" layoutY="4.0" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #b9a08a;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
       <Label layoutX="41.0" layoutY="3.0" prefHeight="30.0" prefWidth="247.0" text="Luxurious Hotel - Activities">
          <font>
             <Font name="Berlin Sans FB" size="22.0" />
@@ -41,49 +55,8 @@
             </TableView>
          </content>
       </ScrollPane>
-      <AnchorPane layoutX="2.0" layoutY="47.0" prefHeight="371.0" prefWidth="150.0" style="-fx-background-color: #b9a08a;" visible="false">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <children>
-            <Button layoutX="12.0" layoutY="16.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Room Managing" textFill="WHITE">
-               <font>
-                  <Font name="Arial" size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="12.0" layoutY="77.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Activity Managing" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="12.0" layoutY="139.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E;" text="Clients" textFill="WHITE">
-               <font>
-                  <Font name="Arial" size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="12.0" layoutY="198.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Employees" textFill="WHITE">
-               <font>
-                  <Font name="Arial" size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="12.0" layoutY="259.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Rooms" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="12.0" layoutY="313.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Help" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <Separator prefWidth="150.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-            <Separator layoutX="1.0" layoutY="375.0" prefWidth="150.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-            <Separator layoutX="147.0" layoutY="4.0" minWidth="5.0" orientation="VERTICAL" prefHeight="371.0" prefWidth="1.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-            <Separator layoutX="1.0" layoutY="4.0" minWidth="5.0" orientation="VERTICAL" prefHeight="371.0" prefWidth="1.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-         </children>
-      </AnchorPane>
       <Separator layoutY="35.0" maxHeight="4.0" maxWidth="800.0" minHeight="4.0" minWidth="800.0" prefHeight="4.0" prefWidth="800.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
-      <Button layoutX="1.0" layoutY="42.0" mnemonicParsing="false" text="=">
+      <Button layoutX="1.0" layoutY="42.0" mnemonicParsing="false" onAction="#translateDashboard" text="=">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -148,7 +121,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <VBox layoutX="745.0" layoutY="151.0" prefHeight="188.0" prefWidth="53.0" spacing="20.0">
+      <VBox layoutX="746.0" layoutY="176.0" prefHeight="126.0" prefWidth="53.0" spacing="20.0">
          <children>
             <Button mnemonicParsing="false" onAction="#switchToAddNewActivity" prefHeight="45.0" prefWidth="45.0">
                <graphic>
@@ -168,22 +141,12 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0">
-               <graphic>
-                  <ImageView>
-                     <image>
-                        <Image url="C:\Users\hp\Downloads\clipboard.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </VBox>
-      <TextField layoutX="542.0" layoutY="433.0" prefHeight="30.0" prefWidth="170.0" promptText="Search by client's name" />
-      <Button layoutX="708.0" layoutY="434.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="31.0">
+      <Button layoutX="536.0" layoutY="434.0" mnemonicParsing="false" onAction="#searchActivity" prefHeight="27.0" prefWidth="31.0">
          <graphic>
             <ImageView>
                <image>
@@ -192,8 +155,185 @@
             </ImageView>
          </graphic>
       </Button>
-      <TextField fx:id="textFieldDate" layoutX="542.0" layoutY="3.0" maxHeight="30.0" maxWidth="137.0" minHeight="30.0" minWidth="137.0" prefHeight="30.0" prefWidth="137.0" style="-fx-background-color: #b9a08a;" />
+         <AnchorPane fx:id="sliderModify" layoutX="801.0" layoutY="72.0" maxHeight="377.0" maxWidth="277.0" minHeight="377.0" minWidth="277.0" prefHeight="377.0" prefWidth="277.0" style="-fx-background-color: #FFFFFf;">
+         <children>
+            <TextField fx:id="priceAM" layoutX="119.0" layoutY="221.0" />
+            <TextField fx:id="descriptionAM" layoutX="119.0" layoutY="267.0" prefHeight="51.0" prefWidth="149.0" />
+            <TextField fx:id="personsAM" layoutX="117.0" layoutY="180.0" prefHeight="25.0" prefWidth="149.0" />
+            <TextField fx:id="spotAM" layoutX="117.0" layoutY="140.0" prefHeight="25.0" prefWidth="149.0" />
+            <Label layoutX="80.0" layoutY="16.0" prefHeight="30.0" prefWidth="117.0" text="Activity - N°" textAlignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="22.0" />
+               </font>
+            </Label>
+            <TextField fx:id="idActivityM" disable="true" layoutX="197.0" layoutY="18.0" prefHeight="25.0" prefWidth="45.0" promptText="id" />
+            <Label layoutX="10.0" layoutY="68.0" prefHeight="25.0" prefWidth="99.0" text="Date">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="8.0" layoutY="140.0" prefHeight="25.0" prefWidth="99.0" text="Spot">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="181.0" prefHeight="25.0" prefWidth="99.0" text="Persons">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="221.0" prefHeight="25.0" prefWidth="99.0" text="Price">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="100.0" prefHeight="25.0" prefWidth="99.0" text="Time">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="41.0" layoutY="337.0" mnemonicParsing="false" onAction="#ModifyActivity" prefHeight="25.0" prefWidth="82.0" text="Save">
+                <graphic>
+		        <ImageView>
+		            <Image url="C:\Users\hp\Downloads\check.png" />
+		        </ImageView>
+		  </graphic>
+            </Button>
+            <TextField fx:id="timeAM" layoutX="116.0" layoutY="103.0" />
+            <Label layoutX="11.0" layoutY="260.0" prefHeight="58.0" prefWidth="93.0" text="Description of the activity" textAlignment="JUSTIFY" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="dateAM" layoutX="116.0" layoutY="68.0" prefHeight="25.0" prefWidth="149.0" />
+            <Button layoutX="156.0" layoutY="337.0" mnemonicParsing="false" onAction="#translateModify" prefHeight="25.0" prefWidth="82.0" text="Cancel">
+               <graphic>
+      		        <ImageView>
+      		            <Image url="C:\Users\hp\Downloads\cancel.png" />
+      		        </ImageView>
+      		  </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
       
+      
+      
+      <AnchorPane fx:id="sliderAdd" layoutX="801.0" layoutY="72.0" maxHeight="377.0" maxWidth="277.0" minHeight="377.0" minWidth="277.0" prefHeight="377.0" prefWidth="277.0" style="-fx-background-color: #FFFFFf;">
+         <children>
+            <TextField fx:id="priceA" layoutX="119.0" layoutY="221.0" />
+            <TextField fx:id="descriptionA" layoutX="119.0" layoutY="267.0" prefHeight="51.0" prefWidth="149.0" />
+            <TextField fx:id="personsA" layoutX="117.0" layoutY="180.0" prefHeight="25.0" prefWidth="149.0" />
+            <TextField fx:id="spotA" layoutX="117.0" layoutY="140.0" prefHeight="25.0" prefWidth="149.0" />
+            <Label layoutX="56.0" layoutY="16.0" prefHeight="30.0" prefWidth="165.0" text="New Activity - N°" textAlignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="22.0" />
+               </font>
+            </Label>
+            <TextField disable="true" layoutX="223.0" layoutY="18.0" prefHeight="25.0" prefWidth="39.0" promptText="id" />
+            <Label layoutX="10.0" layoutY="68.0" prefHeight="25.0" prefWidth="99.0" text="Date">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="8.0" layoutY="140.0" prefHeight="25.0" prefWidth="99.0" text="Spot">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="181.0" prefHeight="25.0" prefWidth="99.0" text="Persons">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="221.0" prefHeight="25.0" prefWidth="99.0" text="Price">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="100.0" prefHeight="25.0" prefWidth="99.0" text="Time">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="41.0" layoutY="337.0" mnemonicParsing="false" onAction="#saveNewActivity" prefHeight="25.0" prefWidth="82.0" text="Save">
+                <graphic>
+		        <ImageView>
+		            <Image url="C:\Users\hp\Downloads\check.png" />
+		        </ImageView>
+		  </graphic>
+            </Button>
+            <TextField fx:id="timeA" layoutX="116.0" layoutY="103.0" />
+            <Label layoutX="11.0" layoutY="260.0" prefHeight="58.0" prefWidth="93.0" text="Description of the activity" textAlignment="JUSTIFY" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="161.0" layoutY="337.0" mnemonicParsing="false" onAction="#translateAdd" prefHeight="25.0" prefWidth="82.0" text="Cancel">
+               <graphic>
+      		        <ImageView>
+      		            <Image url="C:\Users\hp\Downloads\cancel.png" />
+      		        </ImageView>
+      		  </graphic>
+            </Button>
+            <DatePicker fx:id="dateA" layoutX="116.0" layoutY="68.0" prefHeight="25.0" prefWidth="149.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="sliderDashboard" layoutX="-158.0" layoutY="63.0" prefHeight="378.0" prefWidth="150.0" style="-fx-background-color: #b9a08a;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Button layoutX="12.0" layoutY="3.0" mnemonicParsing="false" onAction="#switchToDashboard" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="12.0" layoutY="57.0" mnemonicParsing="false" onAction="#switchToBookingRoom" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Book Room" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="12.0" layoutY="111.0" mnemonicParsing="false" onAction="#switchToClient" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E;" text="Clients" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="12.0" layoutY="165.0" mnemonicParsing="false" onAction="#switchToActivity" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Activities" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="12.0" layoutY="219.0" mnemonicParsing="false" onAction="#switchToRooms" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Rooms" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="12.0" layoutY="326.0" mnemonicParsing="false" onAction="#switchToHelpAndDoc" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Help &amp; Docs" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="13.0" layoutY="272.0" mnemonicParsing="false" onAction="#switchToBookingActivity" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Book Act" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Separator layoutX="2.0" minWidth="5.0" orientation="VERTICAL" prefHeight="371.0" prefWidth="1.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="146.0" minWidth="5.0" orientation="VERTICAL" prefHeight="371.0" prefWidth="1.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator prefWidth="150.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="1.0" layoutY="372.0" prefWidth="150.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="757.0" layoutY="434.0" mnemonicParsing="false" onAction="#switchToActivity" prefHeight="27.0" prefWidth="31.0">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="C:\Users\hp\Downloads\bouton-actualiser.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <DatePicker fx:id="searchByDate" layoutX="565.0" layoutY="435.0" promptText="Search by activity's date" />
          
    </children>
 </AnchorPane>

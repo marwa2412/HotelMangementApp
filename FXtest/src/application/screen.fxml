@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="470.0" maxWidth="800.0" minHeight="470.0" minWidth="800.0" prefHeight="470.0" prefWidth="800.0" style="-fx-background-color: #C8B49C;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SceneController">
+   <children>
+      <Label layoutX="46.0" layoutY="3.0" prefHeight="30.0" prefWidth="125.0" text="Current Page" textFill="#fb0505">
+         <font>
+            <Font name="Berlin Sans FB" size="22.0" />
+         </font>
+      </Label>
+      <Separator layoutY="35.0" prefHeight="4.0" prefWidth="800.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+      <Button layoutX="1.0" layoutY="42.0" mnemonicParsing="false" text="=">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="3.0" layoutY="2.0" mnemonicParsing="false" style="-fx-background-color: b9a08a;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <graphic>
+			        <ImageView>
+			            <Image url="C:\Users\hp\Downloads\rewind-button.png" />
+			        </ImageView>
+		    	</graphic>
+      </Button>
+      <VBox layoutX="737.0" layoutY="160.0" prefHeight="188.0" prefWidth="53.0" spacing="20.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+      <TextField layoutX="252.0" layoutY="436.0" prefHeight="30.0" prefWidth="103.0" promptText="Search by ....." />
+      <Button layoutX="353.0" layoutY="437.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="31.0">
+         <graphic>
+	        	<ImageView>
+		            <Image url="C:\Users\hp\Downloads\search.png" />
+		        </ImageView>
+		 </graphic>
+      </Button>
+      <AnchorPane layoutX="-156.0" layoutY="63.0" prefHeight="378.0" prefWidth="150.0" style="-fx-background-color: #b9a08a;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Button layoutX="12.0" layoutY="3.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="12.0" layoutY="57.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Book Room" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="12.0" layoutY="111.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E;" text="Clients" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="12.0" layoutY="165.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Activities" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="12.0" layoutY="219.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Rooms" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="12.0" layoutY="326.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Help &amp; Docs" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="13.0" layoutY="272.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Book Act" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Separator layoutX="2.0" minWidth="5.0" orientation="VERTICAL" prefHeight="371.0" prefWidth="1.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="146.0" minWidth="5.0" orientation="VERTICAL" prefHeight="371.0" prefWidth="1.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator prefWidth="150.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="1.0" layoutY="372.0" prefWidth="150.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="427.0" layoutY="363.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="31.0">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="C:\Users\hp\Downloads\bouton-actualiser.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <AnchorPane layoutX="598.0" layoutY="310.0" prefHeight="85.0" prefWidth="139.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <ComboBox layoutY="6.0" prefHeight="25.0" prefWidth="135.0" />
+            <Button layoutX="5.0" layoutY="51.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="31.0">
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../../../../Downloads/check.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <TableView layoutX="94.0" layoutY="214.0" maxHeight="347.0" maxWidth="712.0" minHeight="217.0" minWidth="325.0" prefHeight="217.0" prefWidth="325.0">
+         <columns>
+            <TableColumn maxWidth="500.0" prefWidth="56.666656494140625" text="Col 1" />
+            <TableColumn maxWidth="500.0" prefWidth="57.33331298828125" text="Col 2" />
+            <TableColumn maxWidth="200.0" prefWidth="70.00003051757812" text="Col 3" />
+            <TableColumn maxWidth="200.0" minWidth="45.99993896484375" prefWidth="60.66668701171875" text="Col 4" />
+            <TableColumn maxWidth="100.0" prefWidth="79.33331298828125" text="Col 5" />
+         </columns>
+      </TableView>
+      <Button layoutX="423.0" layoutY="272.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="15.0">
+       <graphic>
+			        <ImageView>
+			            <Image url="C:\Users\hp\Downloads\bouton-ajouter (1).png" />
+			        </ImageView>
+		    	</graphic>
+      </Button>
+      <Button layoutX="423.0" layoutY="319.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="25.0">
+       <graphic>
+			        <ImageView>
+			            <Image url="C:\Users\hp\Downloads\edit-button.png" />
+			        </ImageView>
+		    	</graphic>
+      </Button>
+      <Label alignment="CENTER" layoutX="645.0" layoutY="3.0" prefHeight="30.0" prefWidth="53.0" style="-fx-background-color: b9a08a;" text="Date" textFill="#fb0505">
+         <font>
+            <Font name="Berlin Sans FB" size="22.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="704.0" layoutY="3.0" prefHeight="30.0" prefWidth="53.0" style="-fx-background-color: b9a08a;" text="Time" textFill="#fb0303">
+         <font>
+            <Font name="Berlin Sans FB" size="22.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="636.0" layoutY="183.0" maxHeight="409.0" maxWidth="277.0" minHeight="279.0" minWidth="159.0" prefHeight="279.0" prefWidth="159.0" style="-fx-background-color: #FFFFFf;">
+         <children>
+            <TextField layoutX="70.0" layoutY="68.0" prefHeight="25.0" prefWidth="82.0" style="-fx-font-style: #706c6c;" text="Value 1" />
+            <Label layoutX="35.0" layoutY="24.0" prefHeight="30.0" prefWidth="69.0" text="Item -N°" textAlignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+            </Label>
+            <TextField disable="true" layoutX="111.0" layoutY="26.0" prefHeight="25.0" prefWidth="30.0" promptText="id" />
+            <Label layoutX="10.0" layoutY="68.0" prefHeight="25.0" prefWidth="43.0" text="Col 1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="134.0" prefHeight="25.0" prefWidth="43.0" text="Col 3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="169.0" prefHeight="25.0" prefWidth="43.0" text="Col 4">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="206.0" prefHeight="25.0" prefWidth="43.0" text="Col 5">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="100.0" prefHeight="25.0" prefWidth="43.0" text="Col 2">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="70.0" layoutY="102.0" prefHeight="25.0" prefWidth="82.0" text="Value 2" />
+            <TextField layoutX="70.0" layoutY="136.0" prefHeight="25.0" prefWidth="82.0" text="Value 3" />
+            <TextField layoutX="70.0" layoutY="169.0" prefHeight="25.0" prefWidth="82.0" text="Value 4" />
+            <TextField layoutX="70.0" layoutY="203.0" prefHeight="25.0" prefWidth="82.0" text="Value 5" />
+            <ImageView layoutX="104.0" layoutY="244.0">
+               <image>
+                  <Image url="C:\Users\hp\Downloads\cancel.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="40.0" layoutY="244.0">
+               <image>
+                  <Image url="C:\Users\hp\Downloads\check.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="469.0" layoutY="42.0" maxHeight="409.0" maxWidth="277.0" minHeight="279.0" minWidth="159.0" prefHeight="279.0" prefWidth="159.0" style="-fx-background-color: #FFFFFf;">
+         <children>
+            <TextField layoutX="70.0" layoutY="68.0" prefHeight="25.0" prefWidth="82.0" style="-fx-font-style: #706c6c;" />
+            <Label layoutX="35.0" layoutY="24.0" prefHeight="30.0" prefWidth="82.0" text="New - N°" textAlignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+            </Label>
+            <TextField disable="true" layoutX="114.0" layoutY="26.0" prefHeight="25.0" prefWidth="30.0" promptText="id" />
+            <Label layoutX="10.0" layoutY="68.0" prefHeight="25.0" prefWidth="43.0" text="Col 1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="134.0" prefHeight="25.0" prefWidth="43.0" text="Col 3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="169.0" prefHeight="25.0" prefWidth="43.0" text="Col 4">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="206.0" prefHeight="25.0" prefWidth="43.0" text="Col 5">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="100.0" prefHeight="25.0" prefWidth="43.0" text="Col 2">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="70.0" layoutY="102.0" prefHeight="25.0" prefWidth="82.0" />
+            <TextField layoutX="70.0" layoutY="136.0" prefHeight="25.0" prefWidth="82.0" />
+            <TextField layoutX="70.0" layoutY="169.0" prefHeight="25.0" prefWidth="82.0" />
+            <TextField layoutX="70.0" layoutY="203.0" prefHeight="25.0" prefWidth="82.0" />
+            <ImageView layoutX="104.0" layoutY="244.0">
+               <image>
+                  <Image url="C:\Users\hp\Downloads\cancel.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="40.0" layoutY="244.0">
+               <image>
+                  <Image url="C:\Users\hp\Downloads\check.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="25.0" layoutY="42.0" prefHeight="165.0" prefWidth="151.0" style="-fx-background-color: #b9a08a;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Button layoutX="12.0" layoutY="8.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Interface 1" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="12.0" layoutY="60.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E" text="Interface 2" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="12.0" layoutY="111.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" style="-fx-background-color: #94795E;" text="Interface 3" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Separator layoutX="2.0" minWidth="5.0" orientation="VERTICAL" prefHeight="160.0" prefWidth="5.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="146.0" minWidth="5.0" orientation="VERTICAL" prefHeight="160.0" prefWidth="5.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator prefWidth="150.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+            <Separator layoutX="1.0" layoutY="158.0" prefWidth="150.0" style="-fx-background-color: #b9a08a; -fx-border-color: #b9a08a;" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="762.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/utilisateur.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="239.0" layoutX="204.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="C:/Users/hp/Downloads/dialog.png" />
+         </image>
+      </ImageView>  
+         
+   </children>
+</AnchorPane>

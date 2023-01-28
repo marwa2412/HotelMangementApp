@@ -12,17 +12,17 @@
    <children>
       <AnchorPane layoutY="-1.0" prefHeight="353.0" prefWidth="277.0" style="-fx-background-color: #FFFFFf;">
          <children>
-            <TextField fx:id="Nationality" layoutX="119.0" layoutY="193.0" />
-            <TextField fx:id="Phone" layoutX="119.0" layoutY="233.0" />
-            <TextField fx:id="Sexe" layoutX="119.0" layoutY="151.0" prefHeight="25.0" prefWidth="149.0" />
-            <TextField fx:id="CIN" layoutX="117.0" layoutY="110.0" prefHeight="25.0" prefWidth="149.0" />
-            <TextField fx:id="FullName" layoutX="115.0" layoutY="68.0" />
+            <TextField fx:id="NationalityM" layoutX="119.0" layoutY="193.0" editable="true"/>
+            <TextField fx:id="PhoneM" layoutX="119.0" layoutY="233.0" editable="true" />
+            <TextField fx:id="SexeM" layoutX="119.0" layoutY="151.0" prefHeight="25.0" prefWidth="149.0" editable="true" />
+            <TextField fx:id="CINM" layoutX="117.0" layoutY="110.0" prefHeight="25.0" prefWidth="149.0" editable="true" />
+            <TextField fx:id="FullNameM" layoutX="115.0" layoutY="68.0" editable="true" />
             <Label layoutX="89.0" layoutY="16.0" prefHeight="30.0" prefWidth="99.0" text="Client - N°" textAlignment="CENTER">
                <font>
                   <Font name="Berlin Sans FB" size="22.0" />
                </font>
             </Label>
-            <TextField fx:id="idC" disable="true" layoutX="190.0" layoutY="18.0" prefHeight="25.0" prefWidth="42.0" promptText="id" />
+            <TextField fx:id="idCM" disable="true" layoutX="190.0" layoutY="18.0" prefHeight="25.0" prefWidth="42.0" promptText="id" editable="true" />
             <Label layoutX="10.0" layoutY="68.0" prefHeight="25.0" prefWidth="99.0" text="Full Name">
                <font>
                   <Font name="System Bold" size="14.0" />
@@ -64,7 +64,7 @@
 		        </ImageView>
 		  </graphic>
       </Button>
-      <TextField fx:id="Email" layoutX="119.0" layoutY="270.0" />
+      <TextField fx:id="EmailM" layoutX="119.0" layoutY="270.0" />
       <Label layoutX="10.0" layoutY="265.0" prefHeight="25.0" prefWidth="99.0" text="E-mail">
          <font>
             <Font name="System Bold" size="14.0" />

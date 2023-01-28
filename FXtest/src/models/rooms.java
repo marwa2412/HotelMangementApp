@@ -1,8 +1,11 @@
 package models;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javafx.beans.property.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class rooms {
 	private SimpleIntegerProperty idRoom = new SimpleIntegerProperty() ;
@@ -14,7 +17,7 @@ public class rooms {
 	private SimpleBooleanProperty cleaningRoom = new SimpleBooleanProperty();
 	private SimpleStringProperty techProbs = new SimpleStringProperty();
 	private SimpleIntegerProperty priceRoom = new SimpleIntegerProperty();
-	
+	private static ObservableList<rooms> Rooms;
 	public rooms(int numRoom, int numFloor, String typeRoom, String viewRoom, String statueRoom, boolean cleaningRoom, String techProbs, int priceRoom) {
         super();
         this.idRoom.set(0);
@@ -166,5 +169,38 @@ public class rooms {
 				e.printStackTrace();
 				}
 	 }
+	 public static void SearchRoom(String RoomNBR) {
+		 try {	 
+			 String query3 = "SELECT * FROM rooms WHERE numRoom=?";
+	 			PreparedStatement preparedStmt2 = hotelModel.connectionToDB().prepareStatement(query3);
+	 			preparedStmt2.setString (1,RoomNBR);
+	 		 	ResultSet rs2 = preparedStmt2.executeQuery();
+	 		 	Rooms = FXCollections.observableArrayList();
+	 		 	System.out.println("SELECT * FROM rooms WHERE numRoom=?");
+	 		 	while(rs2.next()) {
+	 		 		int ID=rs2.getInt("idRoom");
+	 				 int numRoom=rs2.getInt("numRoom");
+	 				 int numFloor=rs2.getInt("floor");
+	 				 String typeRoom=rs2.getString("typeRoom");
+	 				 String viewRoom=rs2.getString("view");
+	 				 String statueRoom=rs2.getString("statue");
+	 				 boolean cleaningRoom=rs2.getBoolean("cleaning");
+	 				 String techProbs=rs2.getString("techProb");
+	 				 int priceRoom=rs2.getInt("price");
+	 				 rooms Room = new rooms(ID,numRoom, numFloor, typeRoom, viewRoom,statueRoom,cleaningRoom, techProbs, priceRoom) ;
+	 				Rooms.add(Room);	
+
+	 			}
+	 		 
+				}catch(Exception e){
+				    System.out.println("Error in connection");
+				e.printStackTrace();
+				}
+	 }
+	 public static ObservableList<rooms> getRoomsSearched(){
+		 return Rooms;
+	 }
+	 
+	
 	
 }
