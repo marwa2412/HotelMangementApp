@@ -64,6 +64,6 @@
     that can be performed on each element of the application. "Add" buttons that open other completely interfaces or 
     small windows that appear in transition. And "Edit" buttons to be able to modify a selected element either by opening other 
     completely interfaces or small windows that also appear in transition. A button for special modifications for some elements 
-    and a search bar implemented everywhere. Finally, in the top right corner, a refresh button. All interfaces interact in the 
-    same way, except for the "Help & Documentation" one which contains a small explanation of the operation of the other interfaces 
+    and a search bar implemented everywhere.All treatments are conditioned using alert and confirmation boxes Finally, in the top right corner, a refresh button. All 
+    interfaces interact in the same way, except for the "Help & Documentation" one which contains a small explanation of the operation of the other interfaces 
     as already explained.
