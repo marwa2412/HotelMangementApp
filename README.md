@@ -1,4 +1,4 @@
-# HotelMangementApp
+# Hotel Mangement 
 ## Interfaces
 ### Login interface 
   
